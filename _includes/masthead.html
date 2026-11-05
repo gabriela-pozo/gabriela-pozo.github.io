@@ -1,15 +1,19 @@
 {% include base_path %}
-<a class="skip-link" href="#main">Saltar al contenido</a>
+{%- assign L = page.lang | default: "es" -%}
+{%- assign t = site.data.i18n[L] -%}
+{%- if L == "en" -%}{%- assign nav = site.data.navigation.main_en -%}{%- else -%}{%- assign nav = site.data.navigation.main -%}{%- endif -%}
+{%- assign otro = page.translation | default: t.other_url -%}
+<a class="skip-link" href="#main">{{ t.skip }}</a>
 <div class="masthead" role="banner">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav" aria-label="Principal">
-        <button type="button" aria-label="Mostrar más enlaces del menú"><span class="navicon"></span></button>
+      <nav id="site-nav" class="greedy-nav" aria-label="{{ t.nav_label }}">
+        <button type="button" aria-label="{{ t.menu_more }}"><span class="navicon"></span></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/index.html' %}selected{% endif %}">
-            <a href="{{ base_path }}/">{{ site.title }}</a>
+          <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/en/' or page.url == '/index.html' %}selected{% endif %}">
+            <a href="{{ base_path }}{{ t.home_url }}">{{ site.title }}</a>
           </li>
-          {% for link in site.data.navigation.main %}
+          {% for link in nav %}
             {% if link.url contains 'http' %}
               {% assign domain = '' %}
             {% else %}
@@ -19,8 +23,11 @@
               <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
             </li>
           {% endfor %}
+          <li class="masthead__menu-item persist tail lang-switch">
+            <a href="{{ base_path }}{{ otro }}" hreflang="{{ t.other_code }}" lang="{{ t.other_code }}" aria-label="{{ t.switch_aria }}">{{ t.switch_text }}</a>
+          </li>
           <li id="theme-toggle" class="masthead__menu-item persist tail">
-            <a role="button" tabindex="0" aria-label="Cambiar entre tema claro y oscuro"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true"></i></a>
+            <a role="button" tabindex="0" aria-label="{{ t.theme }}"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true"></i></a>
           </li>
         </ul>
         <ul class="hidden-links hidden"></ul>

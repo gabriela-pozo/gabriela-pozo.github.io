@@ -3,6 +3,8 @@ layout: single
 ---
 
 {%- comment -%} Página de un proyecto: figura con pie, cifra clave, pregunta, resultado y botones; luego el texto propio de cada archivo de _portfolio/. {%- endcomment -%}
+{%- assign L = page.lang | default: "es" -%}
+{%- assign t = site.data.i18n[L] -%}
 <div class="project">
   <p class="card__tags">{{ page.etiquetas }}</p>
   <figure class="project__fig">
@@ -10,12 +12,12 @@ layout: single
     <figcaption>{{ page.figcaption }}</figcaption>
   </figure>
   <p class="card__num project__num"><span class="card__num-value">{{ page.cifra }}</span> <span class="card__num-label">{{ page.cifra_pie }}</span></p>
-  <p class="card__label">Pregunta</p>
+  <p class="card__label">{{ t.pregunta }}</p>
   <p class="project__q">{{ page.pregunta }}</p>
-  <p class="card__label">Hallazgo</p>
+  <p class="card__label">{{ t.hallazgo }}</p>
   <p class="project__r">{{ page.resultado | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
   <p class="card__actions">
-    <a class="btn btn--outline" href="{{ page.repo }}" rel="noopener">Código</a>
+    <a class="btn btn--outline" href="{{ page.repo }}" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> {{ t.codigo }}</a>
     {%- if page.demo %}
     <a class="btn" href="{{ page.demo }}" rel="noopener">{{ page.demo_label }}</a>
     {%- endif %}
@@ -24,4 +26,4 @@ layout: single
 
 {{ content }}
 
-<p><a href="{{ '/#proyectos' | prepend: site.baseurl }}">&larr; Todos los proyectos</a></p>
+<p><a href="{{ t.home_url | append: '#proyectos' | prepend: site.baseurl }}">&larr; {{ t.back }}</a></p>

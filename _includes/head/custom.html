@@ -38,3 +38,9 @@
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- end custom head snippets -->
+
+{%- comment -%} Versiones del mismo contenido en cada idioma (para buscadores) {%- endcomment -%}
+{%- if page.translation %}
+<link rel="alternate" hreflang="{{ page.lang | default: 'es' }}" href="{{ page.url | prepend: site.url }}">
+<link rel="alternate" hreflang="{% if page.lang == 'en' %}es{% else %}en{% endif %}" href="{{ page.translation | prepend: site.url }}">
+{%- endif %}

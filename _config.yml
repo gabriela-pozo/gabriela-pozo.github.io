@@ -138,6 +138,9 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
+  portfolio_en:
+    output: true
+    permalink: /en/projects/:path/
 
 
 # Valores por defecto: sin barra lateral en ninguna página
@@ -154,6 +157,13 @@ defaults:
     values:
       layout: proyecto
       author_profile: false
+  - scope:
+      path: ""
+      type: portfolio_en
+    values:
+      layout: proyecto
+      author_profile: false
+      lang: en
 
 
 # Sass

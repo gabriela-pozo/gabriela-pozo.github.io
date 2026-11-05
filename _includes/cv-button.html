@@ -2,7 +2,9 @@
   Botón "Descargar CV". Solo aparece si el archivo existe en files/, para no dejar un enlace roto.
   El archivo debe llamarse files/CV-Gabriela-Pozo.pdf y NO debe incluir teléfono ni dirección.
 {%- endcomment -%}
+{%- assign L = page.lang | default: "es" -%}
+{%- assign t = site.data.i18n[L] -%}
 {%- assign cv_file = site.static_files | where: "path", "/files/CV-Gabriela-Pozo.pdf" -%}
 {%- if cv_file.size > 0 -%}
-<a class="btn" href="{{ '/files/CV-Gabriela-Pozo.pdf' | prepend: site.baseurl }}" download><i class="fa-solid fa-download" aria-hidden="true"></i> Descargar CV (PDF)</a>
+<a class="btn" href="{{ '/files/CV-Gabriela-Pozo.pdf' | prepend: site.baseurl }}" download><i class="fa-solid fa-download" aria-hidden="true"></i> {{ t.cv }}</a>
 {%- endif -%}

@@ -1,10 +1,12 @@
 {% include base_path %}
+{%- assign L = page.lang | default: "es" -%}
+{%- assign t = site.data.i18n[L] -%}
 
 <div class="page__footer-copyright">
   <p>&copy; {{ site.time | date: '%Y' }} {{ site.name }}</p>
   <p>
     <a href="https://github.com/{{ site.author.github }}">GitHub</a>
     {%- if site.author.linkedin %} &middot; <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a>{% endif %}
-    &middot; <a href="mailto:{{ site.author.email }}">Correo</a>
+    &middot; <a href="mailto:{{ site.author.email }}">{{ t.email }}</a>
   </p>
 </div>

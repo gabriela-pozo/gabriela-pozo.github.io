@@ -9,6 +9,8 @@
     repo, demo (opcional), demo_label
 {%- endcomment -%}
 {%- assign p = include.proyecto -%}
+{%- assign L = page.lang | default: "es" -%}
+{%- assign t = site.data.i18n[L] -%}
 <article class="card{% if include.destacado %} card--featured{% endif %}" data-cats="{{ p.categorias | join: ' ' }}">
   <figure class="card__fig">
     <div class="gallery">
@@ -27,13 +29,13 @@
     <p class="card__tags">{{ p.etiquetas }} · <time datetime="{{ p.date | date: '%Y-%m-%d' }}">{% include fecha.html d=p.date corta=true %}</time></p>
     <h3 class="card__title"><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></h3>
     <p class="card__num"><span class="card__num-value">{{ p.cifra }}</span> <span class="card__num-label">{{ p.cifra_pie }}</span></p>
-    <p class="card__label">Pregunta</p>
+    <p class="card__label">{{ t.pregunta }}</p>
     <p class="card__q">{{ p.pregunta }}</p>
-    <p class="card__label">Hallazgo</p>
+    <p class="card__label">{{ t.hallazgo }}</p>
     <p class="card__r">{{ p.resultado | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
     <p class="card__actions">
-      <a class="btn" href="{{ p.url | prepend: site.baseurl }}" aria-label="Ver el caso: {{ p.title | escape }}">Leer el caso</a>
-      <a class="btn btn--outline" href="{{ p.repo }}" rel="noopener" aria-label="Código de {{ p.title | escape }}">Código</a>
+      <a class="btn" href="{{ p.url | prepend: site.baseurl }}" aria-label="{{ t.leer_aria }}: {{ p.title | escape }}">{{ t.leer }}</a>
+      <a class="btn btn--outline" href="{{ p.repo }}" rel="noopener" aria-label="{{ t.codigo_aria }} {{ p.title | escape }}"><i class="fa-brands fa-github" aria-hidden="true"></i> {{ t.codigo }}</a>
       {%- if p.demo %}
       <a class="btn btn--outline" href="{{ p.demo }}" rel="noopener" aria-label="{{ p.demo_label }} de {{ p.title | escape }}">{{ p.demo_label }}</a>
       {%- endif %}

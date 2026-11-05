@@ -11,11 +11,13 @@
     <div class="compare__before">
       <img class="compare__img" src="{{ include.antes | prepend: '/images/' | prepend: site.baseurl }}" alt="{{ include.alt_antes | escape }}" width="876" height="942" loading="lazy">
     </div>
-    <span class="compare__tag compare__tag--before">Antes · {{ include.etiqueta_antes }}</span>
-    <span class="compare__tag compare__tag--after">Después · {{ include.etiqueta_despues }}</span>
+    {%- assign L = page.lang | default: "es" -%}
+{%- assign t = site.data.i18n[L] -%}
+    <span class="compare__tag compare__tag--before">{{ t.before }} · {{ include.etiqueta_antes }}</span>
+    <span class="compare__tag compare__tag--after">{{ t.after }} · {{ include.etiqueta_despues }}</span>
     <span class="compare__handle" aria-hidden="true"></span>
   </div>
-  <label class="compare__label" for="{{ include.id }}">Desliza para comparar el antes y el después</label>
+  <label class="compare__label" for="{{ include.id }}">{{ t.compare_hint }}</label>
   <input class="compare__range" id="{{ include.id }}" type="range" min="0" max="100" value="50" step="1">
   <figcaption>{{ include.pie }}</figcaption>
 </figure>

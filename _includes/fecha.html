@@ -1,12 +1,16 @@
 {%- comment -%}
-  Fecha en español. Uso: {% include fecha.html d=page.date %}  ->  1 de noviembre de 2026
-  Con corta=true: 1 nov 2026
+  Fecha en el idioma de la página. Uso: {% include fecha.html d=page.date %}
+  es: 1 de noviembre de 2026 · en: November 1, 2026. Con corta=true: 1 nov 2026 / 1 Nov 2026
 {%- endcomment -%}
+{%- assign L = page.lang | default: "es" -%}
 {%- assign m = include.d | date: "%-m" | minus: 1 -%}
 {%- if include.corta -%}
-{%- assign meses = "ene,feb,mar,abr,may,jun,jul,ago,sep,oct,nov,dic" | split: "," -%}
+{%- assign meses = site.data.i18n[L].months_short | split: "," -%}
 {{ include.d | date: "%-d" }} {{ meses[m] }} {{ include.d | date: "%Y" }}
+{%- elsif L == "en" -%}
+{%- assign meses = site.data.i18n[L].months | split: "," -%}
+{{ meses[m] }} {{ include.d | date: "%-d" }}, {{ include.d | date: "%Y" }}
 {%- else -%}
-{%- assign meses = "enero,febrero,marzo,abril,mayo,junio,julio,agosto,septiembre,octubre,noviembre,diciembre" | split: "," -%}
+{%- assign meses = site.data.i18n[L].months | split: "," -%}
 {{ include.d | date: "%-d" }} de {{ meses[m] }} de {{ include.d | date: "%Y" }}
 {%- endif -%}

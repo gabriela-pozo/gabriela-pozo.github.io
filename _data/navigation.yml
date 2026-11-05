@@ -10,3 +10,13 @@ main:
 
   - title: "Contacto"
     url: /#contacto
+
+main_en:
+  - title: "Home"
+    url: /en/#inicio
+
+  - title: "Projects"
+    url: /en/#proyectos
+
+  - title: "Contact"
+    url: /en/#contacto

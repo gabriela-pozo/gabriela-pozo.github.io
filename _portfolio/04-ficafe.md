@@ -2,6 +2,7 @@
 title: "Archivo FICAFE: diez ediciones de la feria de cafés especiales"
 orden: 4
 collection: portfolio
+translation: /en/projects/ficafe/
 date: 2026-11-04 12:00:00 -0500
 permalink: /proyectos/ficafe/
 excerpt: "Diez ediciones de la Feria Internacional de Cafés Especiales del Perú (2016-2026) con fuente enlazada, y lo que sigue sin medirse."

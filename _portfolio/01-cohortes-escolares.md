@@ -2,6 +2,7 @@
 title: "Cohortes escolares del Perú 2025: ¿a qué distritos atender primero?"
 orden: 1
 collection: portfolio
+translation: /en/projects/school-cohorts/
 date: 2026-11-01 12:00:00 -0500
 permalink: /proyectos/cohortes-escolares/
 excerpt: "151 de 1 798 distritos son de prioridad alta en el sistema escolar; el 44 % está en Loreto, Huánuco y San Martín. No es una proyección oficial."

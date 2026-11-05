@@ -2,6 +2,7 @@
 title: "¿Inventa cifras Claude? Memoria, web y MCP del BCRP"
 orden: 3
 collection: portfolio
+translation: /en/projects/claude-bcrp/
 date: 2026-10-28 12:00:00 -0500
 permalink: /proyectos/claude-bcrp/
 excerpt: "Con 10 preguntas y Claude Haiku, el servidor MCP acertó 10, la web 9 y la memoria 0."

@@ -2,6 +2,7 @@
 title: "Análisis exploratorio con datos abiertos"
 orden: 5
 collection: portfolio
+translation: /en/projects/open-data/
 date: 2026-03-10 12:00:00 -0500
 permalink: /proyectos/datos-abiertos/
 excerpt: "Cuadernos de análisis con datos abiertos sobre crisis fiscal, consumo global de energía y pérdida de cobertura arbórea en el Perú."

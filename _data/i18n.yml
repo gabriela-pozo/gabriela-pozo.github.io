@@ -1,0 +1,63 @@
+# Textos de la interfaz en cada idioma. Los casos y la portada en inglés están en _portfolio_en/ y _pages/about_en.md.
+es:
+  code: es
+  home_url: /
+  other_url: /en/
+  other_code: en
+  switch_text: EN
+  switch_aria: "Cambiar el idioma a inglés"
+  skip: "Saltar al contenido"
+  nav_label: "Principal"
+  menu_more: "Mostrar más enlaces del menú"
+  theme: "Cambiar entre tema claro y oscuro"
+  photo_alt: "Foto de Gabriela Pozo"
+  pregunta: "Pregunta"
+  hallazgo: "Hallazgo"
+  leer: "Leer el caso"
+  leer_aria: "Leer el caso"
+  codigo: "Código"
+  codigo_aria: "Código de"
+  back: "Todos los proyectos"
+  cv: "Descargar CV (PDF)"
+  email: "Correo"
+  before: "Antes"
+  after: "Después"
+  compare_hint: "Desliza para comparar el antes y el después"
+  months: "enero,febrero,marzo,abril,mayo,junio,julio,agosto,septiembre,octubre,noviembre,diciembre"
+  months_short: "ene,feb,mar,abr,may,jun,jul,ago,sep,oct,nov,dic"
+  js_tabs: "Ver el proyecto"
+  js_image: "Imagen"
+  js_live: "En vivo"
+  js_live_title: "Vista en vivo"
+  js_toward_after: "% hacia el después"
+en:
+  code: en
+  home_url: /en/
+  other_url: /
+  other_code: es
+  switch_text: ES
+  switch_aria: "Switch the language to Spanish"
+  skip: "Skip to content"
+  nav_label: "Main"
+  menu_more: "Show more menu links"
+  theme: "Switch between light and dark theme"
+  photo_alt: "Photo of Gabriela Pozo"
+  pregunta: "Question"
+  hallazgo: "Finding"
+  leer: "Read the case"
+  leer_aria: "Read the case"
+  codigo: "Code"
+  codigo_aria: "Code for"
+  back: "All projects"
+  cv: "Download CV (PDF, in Spanish)"
+  email: "Email"
+  before: "Before"
+  after: "After"
+  compare_hint: "Slide to compare before and after"
+  months: "January,February,March,April,May,June,July,August,September,October,November,December"
+  months_short: "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec"
+  js_tabs: "View the project"
+  js_image: "Image"
+  js_live: "Live"
+  js_live_title: "Live view"
+  js_toward_after: "% toward the after"

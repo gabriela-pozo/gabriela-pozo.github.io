@@ -23,3 +23,9 @@ Se publica sola con GitHub Actions al hacer push a `main` (Settings > Pages > So
 ## Créditos
 
 Construido sobre la plantilla [Academic Pages](https://github.com/academicpages/academicpages.github.io) (licencia MIT, ver `LICENSE`), derivada de Minimal Mistakes.
+
+## Idiomas (español / inglés)
+
+- Español: `_pages/about.md` y `_portfolio/`. Inglés: `_pages/about_en.md` (en `/en/`) y `_portfolio_en/` (en `/en/projects/...`).
+- Cada página enlaza a su traducción con `translation:` en el encabezado; el botón ES/EN del menú usa ese enlace.
+- Los textos de botones y etiquetas están en `_data/i18n.yml`. Si cambias el texto de un caso, cámbialo también en su versión en el otro idioma.

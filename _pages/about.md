@@ -1,5 +1,6 @@
 ---
 permalink: /
+translation: /en/
 title: "Gabriela Pozo"
 seo_title: "Gabriela Pozo · Análisis con datos abiertos"
 hide_title: true
@@ -13,7 +14,7 @@ redirect_from:
 
 <section id="inicio" class="hero" aria-labelledby="nombre">
   <div class="hero__head">
-    {% include foto.html %}
+    {%- include foto.html -%}
     <div>
       <h1 id="nombre" class="hero__name">Gabriela Pozo</h1>
       <p class="hero__tagline">Lo que dicen los datos, y lo que todavía no.</p>
