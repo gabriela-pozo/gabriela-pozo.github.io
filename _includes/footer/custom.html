@@ -123,7 +123,7 @@
   window.addEventListener("scroll", onScroll, { passive: true }); window.addEventListener("resize", onScroll); onScroll();
 
   if (!calm && "IntersectionObserver" in window) {
-    var targets = [].slice.call(document.querySelectorAll(".card, .section__title, .home-lead, .contact"));
+    var targets = [].slice.call(document.querySelectorAll(".card, .row, .section__title, .home-lead, .contact"));
     document.documentElement.classList.add("gp-reveal");
     targets.forEach(function (t) { t.classList.add("reveal"); });
     var io = new IntersectionObserver(function (es) {

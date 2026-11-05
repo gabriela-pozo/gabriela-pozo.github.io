@@ -624,3 +624,33 @@ html[data-theme="dark"] body::after { mix-blend-mode: screen; opacity: 0.045; }
 /* El fondo decorativo va entre el color de la página (html) y el contenido */
 html { background-color: var(--gp-paper); }
 body { background-color: transparent !important; padding-top: 0 !important; }
+
+
+/* ---------- Más proyectos: filas compactas ---------- */
+.subhead { margin: 2.5rem 0 1rem !important; font-size: 1.375rem; }
+.rows { display: grid; gap: 1rem; }
+.row {
+  display: flex; flex-direction: column; overflow: hidden;
+  background: var(--gp-surface); border: 1px solid var(--gp-line); border-radius: var(--gp-radius-m);
+}
+.row__thumb { display: block; aspect-ratio: 16 / 7; overflow: hidden; border-bottom: 1px solid var(--gp-line); background: var(--gp-paper); }
+.row__thumb img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.row__body { padding: 1rem 1.25rem 1.25rem; }
+.row__title { margin: 0 0 0.5rem !important; font-size: 1.25rem; line-height: 1.25; }
+.page__content .row__title a:not(.btn) { color: var(--gp-ink); text-decoration: none; }
+.page__content .row__title a:not(.btn):hover { color: var(--gp-accent); text-decoration: underline; }
+.row__text { margin: 0 0 1rem; color: var(--gp-muted); }
+.row__actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; }
+.row__actions .btn { margin: 0; flex: 1 1 7rem; }
+@media (min-width: 720px) {
+  .row { flex-direction: row; align-items: stretch; }
+  .row__thumb { flex: 0 0 15rem; aspect-ratio: auto; border-bottom: 0; border-right: 1px solid var(--gp-line); }
+  .row__body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 1.25rem 1.5rem; }
+  .row__actions .btn { flex: 0 1 auto; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .row { transition: transform .25s ease, box-shadow .25s ease, border-color .25s; }
+  .row:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--gp-accent) 55%, var(--gp-line)); box-shadow: 0 14px 30px -18px color-mix(in srgb, var(--gp-ink) 35%, transparent); }
+  .row__thumb img { transition: transform .5s ease; }
+  .row:hover .row__thumb img { transform: scale(1.04); }
+}

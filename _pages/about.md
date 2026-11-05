@@ -34,19 +34,21 @@ redirect_from:
 
 <section id="proyectos" class="section" aria-labelledby="t-proyectos">
   <h2 id="t-proyectos" class="section__title">Proyectos</h2>
-  <p class="home-lead">Cinco preguntas sobre el Perú, respondidas con datos abiertos. Cada tarjeta muestra la pregunta, el resultado y la fuente; abre la vista interactiva para explorarla tú misma.</p>
-  <div class="filters" role="group" aria-label="Filtrar proyectos por tipo" data-filters>
-    <button type="button" data-filter="todos" aria-pressed="true">Todos</button>
-    <button type="button" data-filter="dashboards" aria-pressed="false">Dashboards</button>
-    <button type="button" data-filter="teledeteccion" aria-pressed="false">Teledetección</button>
-    <button type="button" data-filter="ia" aria-pressed="false">IA</button>
-    <button type="button" data-filter="datos-abiertos" aria-pressed="false">Datos abiertos</button>
-  </div>
-  <p class="filters__status" id="filters-status" role="status" aria-live="polite"></p>
+  <p class="home-lead">Tres casos destacados, con imágenes y vista interactiva. Debajo, más trabajo con datos abiertos.</p>
   <div class="cards">
     {%- assign proyectos = site.portfolio | sort: "orden" -%}
     {%- for p in proyectos -%}
-      {% include project-card.html proyecto=p destacado=forloop.first %}
+      {%- if p.destacado -%}
+        {% include project-card.html proyecto=p destacado=forloop.first %}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+  <h3 class="subhead">Más proyectos</h3>
+  <div class="rows">
+    {%- for p in proyectos -%}
+      {%- unless p.destacado -%}
+        {% include project-row.html proyecto=p %}
+      {%- endunless -%}
     {%- endfor -%}
   </div>
 </section>
