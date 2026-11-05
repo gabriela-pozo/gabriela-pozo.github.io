@@ -20,7 +20,7 @@ redirect_from:
       <p class="hero__tagline">Lo que dicen los datos, y lo que todavía no.</p>
     </div>
   </div>
-  <p class="hero__bio">Análisis con datos abiertos: una pregunta, un hallazgo con su fuente y lo que no se pudo medir. Vengo del seguimiento de indicadores y el análisis prospectivo en el sector público; hoy llevo ese oficio a dashboards, imágenes satelitales y evaluación de IA.</p>
+  <p class="hero__bio">Análisis con datos abiertos: una pregunta, un hallazgo con su fuente y lo que no se pudo medir. Trabajé en seguimiento de indicadores y estudios prospectivos en el sector público, y me motiva usar la evidencia para decidir mejor y generar valor público.</p>
   <ul class="chips" aria-label="Temas que se tratan aquí">
     <li>Educación</li>
     <li>Incendios forestales</li>
