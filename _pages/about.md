@@ -13,19 +13,17 @@ redirect_from:
 
 <section id="inicio" class="hero" aria-labelledby="nombre">
   <h1 id="nombre" class="hero__name">Gabriela Pozo</h1>
-  <p class="hero__tagline">Datos del Perú, con sus límites a la vista.</p>
-  <p class="hero__bio">Trabajo con indicadores, metas y tableros de control para apoyar decisiones públicas: lo hice en CEPLAN y en el MIMP. Hoy uso datos abiertos para responder preguntas sobre el Perú, y cuento también lo que no se pudo medir.</p>
-  <ul class="chips" aria-label="Áreas de trabajo">
-    <li>Seguimiento de indicadores</li>
-    <li>Estudios prospectivos</li>
-    <li>Población y desarrollo</li>
-    <li>Turismo</li>
-    <li>Tableros de control</li>
-    <li>Datos abiertos</li>
+  <p class="hero__tagline">Lo que dicen los datos del Perú, y lo que todavía no.</p>
+  <p class="hero__bio">Análisis con datos abiertos sobre el Perú. Cada publicación parte de una pregunta, muestra el hallazgo con su fuente y cuenta también lo que no se pudo medir. Vengo del seguimiento de indicadores y tableros en el sector público.</p>
+  <ul class="chips" aria-label="Temas que se tratan aquí">
+    <li>Educación</li>
+    <li>Incendios forestales</li>
+    <li>IA y datos oficiales</li>
+    <li>Café especial</li>
+    <li>Cobertura arbórea</li>
   </ul>
-  <p class="tools-line">Herramientas: Python, Power BI, STATA.</p>
   <p class="hero__actions">
-    <a class="btn" href="#proyectos">Ver proyectos</a>
+    <a class="btn" href="#proyectos">Leer los proyectos</a>
     <a class="btn btn--outline" href="https://github.com/{{ site.author.github }}" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
     {%- if site.author.linkedin %}
     <a class="btn btn--outline" href="https://www.linkedin.com/in/{{ site.author.linkedin }}" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
@@ -33,17 +31,11 @@ redirect_from:
     <a class="btn btn--outline" href="mailto:{{ site.author.email }}"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Correo</a>
     {%- include cv-button.html -%}
   </p>
-
-  <ul class="trail" aria-label="Experiencia en instituciones públicas">
-    <li><strong>CEPLAN</strong><span>Estudios prospectivos, seguimiento de metas y tablero en Power BI</span></li>
-    <li><strong>MIMP</strong><span>Seguimiento y validación de indicadores de población</span></li>
-    <li><strong>Gerencia Regional de Comercio Exterior, Turismo y Artesanía del Cusco</strong><span>Informe de indicadores de turismo</span></li>
-  </ul>
 </section>
 
 <section id="proyectos" class="section" aria-labelledby="t-proyectos">
   <h2 id="t-proyectos" class="section__title">Proyectos</h2>
-  <p class="home-lead">Tres casos con imágenes y vista en vivo. Debajo, más trabajo con datos abiertos.</p>
+  <p class="home-lead">Casos con datos abiertos del Perú. Cada uno plantea una pregunta, expone el hallazgo y deja la fuente a un clic.</p>
   <div class="cards">
     {%- assign proyectos = site.portfolio | sort: "orden" -%}
     {%- for p in proyectos -%}
@@ -52,7 +44,7 @@ redirect_from:
       {%- endif -%}
     {%- endfor -%}
   </div>
-  <h3 class="subhead">Más proyectos</h3>
+  <h3 class="subhead">Más casos</h3>
   <div class="rows">
     {%- for p in proyectos -%}
       {%- unless p.destacado -%}
@@ -62,12 +54,23 @@ redirect_from:
   </div>
 </section>
 
-<section id="actividad" class="section" aria-labelledby="t-actividad">
-  <h2 id="t-actividad" class="section__title">Actividad en GitHub</h2>
-  <p class="home-lead">Todo lo que ves aquí vive en repositorios públicos. Este es el calendario de mi actividad, tomado de <a href="https://github.com/{{ site.author.github }}" rel="noopener">mi perfil</a>.</p>
-  <div class="activity" tabindex="0" role="group" aria-label="Calendario de contribuciones de GitHub (se desplaza horizontalmente)">
-    <img src="https://ghchart.rshah.org/0A7466/{{ site.author.github }}" alt="Calendario de contribuciones de GitHub de {{ site.author.github }} durante el último año" width="720" height="112" loading="lazy" onerror="this.closest('section').hidden=true">
-  </div>
+<section id="novedades" class="section" aria-labelledby="t-novedades">
+  <h2 id="t-novedades" class="section__title">Novedades</h2>
+  <p class="home-lead">Los casos se actualizan cuando hay datos nuevos. Esto fue lo último, y así puedes enterarte de lo siguiente.</p>
+  <ol class="news">
+    {%- assign recientes = site.portfolio | sort: "date" | reverse -%}
+    {%- for p in recientes -%}
+    <li>
+      <time datetime="{{ p.date | date: '%Y-%m-%d' }}">{% include fecha.html d=p.date corta=true %}</time>
+      <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+    </li>
+    {%- endfor -%}
+  </ol>
+  <p class="subscribe">
+    <a class="btn" href="{{ '/publicaciones.xml' | prepend: site.baseurl }}"><i class="fa-solid fa-rss" aria-hidden="true"></i> Suscribirme por RSS</a>
+    <a class="btn btn--outline" href="https://github.com/{{ site.author.github }}" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> Seguir en GitHub</a>
+    <a class="btn btn--outline" href="mailto:{{ site.author.email }}?subject=Av%C3%ADsame%20de%20nuevas%20publicaciones"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Avísame por correo</a>
+  </p>
 </section>
 
 <section id="contacto" class="section" aria-labelledby="t-contacto">

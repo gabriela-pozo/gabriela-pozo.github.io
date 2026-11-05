@@ -1,0 +1,12 @@
+{%- comment -%}
+  Fecha en español. Uso: {% include fecha.html d=page.date %}  ->  1 de noviembre de 2026
+  Con corta=true: 1 nov 2026
+{%- endcomment -%}
+{%- assign m = include.d | date: "%-m" | minus: 1 -%}
+{%- if include.corta -%}
+{%- assign meses = "ene,feb,mar,abr,may,jun,jul,ago,sep,oct,nov,dic" | split: "," -%}
+{{ include.d | date: "%-d" }} {{ meses[m] }} {{ include.d | date: "%Y" }}
+{%- else -%}
+{%- assign meses = "enero,febrero,marzo,abril,mayo,junio,julio,agosto,septiembre,octubre,noviembre,diciembre" | split: "," -%}
+{{ include.d | date: "%-d" }} de {{ meses[m] }} de {{ include.d | date: "%Y" }}
+{%- endif -%}

@@ -3,15 +3,14 @@
     {% include project-row.html proyecto=p %}
 {%- endcomment -%}
 {%- assign p = include.proyecto -%}
-<article class="row" data-repo="{{ p.repo }}">
+<article class="row">
   <a class="row__thumb" href="{{ p.url | prepend: site.baseurl }}" tabindex="-1" aria-hidden="true">
     <img src="{{ p.image | prepend: '/images/' | prepend: site.baseurl }}" alt="" width="1200" height="800" loading="lazy">
   </a>
   <div class="row__body">
-    <p class="card__tags">{{ p.etiquetas }}</p>
+    <p class="card__tags">{{ p.etiquetas }} · <time datetime="{{ p.date | date: '%Y-%m-%d' }}">{% include fecha.html d=p.date corta=true %}</time></p>
     <h4 class="row__title"><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></h4>
     <p class="row__text">{{ p.excerpt }}</p>
-    <p class="card__meta" data-meta></p>
     <p class="row__actions">
       <a class="btn" href="{{ p.url | prepend: site.baseurl }}" aria-label="Leer el caso: {{ p.title | escape }}">Leer el caso</a>
       <a class="btn btn--outline" href="{{ p.repo }}" rel="noopener" aria-label="Código de {{ p.title | escape }}">Código</a>

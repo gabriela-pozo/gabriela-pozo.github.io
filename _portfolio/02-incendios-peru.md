@@ -2,6 +2,7 @@
 title: "Incendios en el Perú: lo que el satélite alcanzó a medir"
 orden: 2
 collection: portfolio
+date: 2026-10-22 12:00:00 -0500
 permalink: /proyectos/incendios-peru/
 excerpt: "En Chichas (Arequipa) ardieron 1 690 ha en octubre de 2026. Solo 4 de los 20 incendios más grandes se pudieron medir: las nubes taparon el resto."
 pregunta: "¿Cuánto se quemó en los mayores incendios del Perú en octubre de 2026?"

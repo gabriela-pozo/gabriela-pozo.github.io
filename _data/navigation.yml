@@ -8,5 +8,8 @@ main:
   - title: "Proyectos"
     url: /#proyectos
 
+  - title: "Novedades"
+    url: /#novedades
+
   - title: "Contacto"
     url: /#contacto

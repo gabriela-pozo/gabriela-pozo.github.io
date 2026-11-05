@@ -163,29 +163,6 @@
     nums.forEach(function (n) { cio.observe(n); });
   }
 
-  /* Dato vivo desde la API pública de GitHub: último cambio y lenguaje de cada repositorio (se guarda 1 hora) */
-  [].forEach.call(document.querySelectorAll("[data-repo]"), function (c) {
-    var m = /github\.com\/([^\/]+)\/([^\/#?]+)/.exec(c.getAttribute("data-repo") || "");
-    var out = c.querySelector("[data-meta]");
-    if (!m || !out) return;
-    var key = "gh:" + m[1] + "/" + m[2];
-    function paint(d) {
-      if (!d || !d.pushed_at) return;
-      var f = new Date(d.pushed_at).toLocaleDateString("es-PE", { day: "numeric", month: "short", year: "numeric" });
-      var a = document.createElement("a");
-      a.href = "https://github.com/" + m[1] + "/" + m[2] + "/commits"; a.rel = "noopener";
-      a.textContent = "Último cambio: " + f;
-      a.setAttribute("aria-label", "Último cambio del repositorio: " + f + ". Ver historial en GitHub");
-      var dot = document.createElement("i"); dot.setAttribute("aria-hidden", "true");
-      out.textContent = ""; out.appendChild(dot); out.appendChild(a);
-      if (d.language) out.appendChild(document.createTextNode(" · " + d.language));
-    }
-    try { var hit = JSON.parse(sessionStorage.getItem(key) || "null"); if (hit && Date.now() - hit.t < 3600000) { paint(hit.d); return; } } catch (e) {}
-    fetch("https://api.github.com/repos/" + m[1] + "/" + m[2], { headers: { Accept: "application/vnd.github+json" } })
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (d) { if (!d) return; var s = { pushed_at: d.pushed_at, language: d.language }; try { sessionStorage.setItem(key, JSON.stringify({ t: Date.now(), d: s })); } catch (e) {} paint(s); })
-      .catch(function () {});
-  });
 })();
 </script>
 <!-- end custom footer snippets -->

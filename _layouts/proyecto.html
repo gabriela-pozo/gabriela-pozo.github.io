@@ -5,14 +5,15 @@ layout: single
 {%- comment -%} Página de un proyecto: figura con pie, cifra clave, pregunta, resultado y botones; luego el texto propio de cada archivo de _portfolio/. {%- endcomment -%}
 <div class="project">
   <p class="card__tags">{{ page.etiquetas }}</p>
+  <p class="project__date">Actualizado el <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{% include fecha.html d=page.date %}</time></p>
   <figure class="project__fig">
     <img class="project__img" src="{{ page.image | prepend: '/images/' | prepend: site.baseurl }}" alt="{{ page.image_alt | escape }}" width="1200" height="800" fetchpriority="high">
     <figcaption>{{ page.figcaption }}</figcaption>
   </figure>
   <p class="card__num project__num"><span class="card__num-value">{{ page.cifra }}</span><span class="card__num-label">{{ page.cifra_pie }}</span></p>
-  <p class="card__label">La pregunta</p>
+  <p class="card__label">Pregunta</p>
   <p class="project__q">{{ page.pregunta }}</p>
-  <p class="card__label">Lo que encontré</p>
+  <p class="card__label">Hallazgo</p>
   <p class="project__r">{{ page.resultado | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
   <p class="card__actions">
     <a class="btn btn--outline" href="{{ page.repo }}" rel="noopener">Código</a>
