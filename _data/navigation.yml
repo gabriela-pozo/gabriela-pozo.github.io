@@ -1,13 +1,15 @@
-# Orden de los enlaces del menú superior.
-# Quitar un enlace aquí lo oculta del menú sin borrar la página.
-# Blog, Talks, Teaching y Publications se quitaron del menú.
+# Menú superior: sitio de una sola página, cada enlace baja a una sección (ancla).
+# Los ids (#inicio, #proyectos, #cv, #contacto) están en _pages/about.md.
 
 main:
   - title: "Inicio"
-    url: /
+    url: /#inicio
 
   - title: "Proyectos"
-    url: /proyectos/
+    url: /#proyectos
 
   - title: "CV"
-    url: /cv/
+    url: /#cv
+
+  - title: "Contacto"
+    url: /#contacto
