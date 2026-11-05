@@ -2,16 +2,29 @@
   Tarjeta de proyecto. Uso:
     {% include project-card.html proyecto=p destacado=true %}
   Campos del front matter de cada archivo de _portfolio/:
-    title, etiquetas, image, image_alt, figcaption (pie de figura), cifra y cifra_pie (cifra clave),
-    pregunta, resultado (markdown; la cifra va en **negrita**), repo, demo (opcional), demo_label
+    title, etiquetas, categorias (lista, para el filtro), destacado,
+    image, image_alt, figcaption (imagen única) o galeria (lista de src, label, alt, caption),
+    embed (URL de la vista interactiva, opcional),
+    cifra, cifra_pie, pregunta, resultado (markdown; la cifra va en **negrita**),
+    repo, demo (opcional), demo_label
 {%- endcomment -%}
 {%- assign p = include.proyecto -%}
-<article class="card{% if include.destacado %} card--featured{% endif %}">
+<article class="card{% if include.destacado %} card--featured{% endif %}" data-cats="{{ p.categorias | join: ' ' }}">
   <figure class="card__fig">
-    <a class="card__imglink" href="{{ p.url | prepend: site.baseurl }}" tabindex="-1" aria-hidden="true"><img class="card__img" src="{{ p.image | prepend: '/images/' | prepend: site.baseurl }}" alt="{{ p.image_alt | escape }}" width="1200" height="800"{% if include.destacado %} fetchpriority="high"{% else %} loading="lazy"{% endif %}></a>
-    <figcaption>{{ p.figcaption }}</figcaption>
+    <div class="gallery">
+      {%- if p.galeria %}
+      {%- for s in p.galeria %}
+      <img class="gallery__img{% if forloop.first %} is-active{% endif %}" src="{{ s.src | prepend: '/images/' | prepend: site.baseurl }}" alt="{{ s.alt | escape }}" data-label="{{ s.label | escape }}" data-caption="{{ s.caption | escape }}" width="1200" height="800"{% if include.destacado and forloop.first %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
+      {%- endfor %}
+      {%- else %}
+      <img class="gallery__img is-active" src="{{ p.image | prepend: '/images/' | prepend: site.baseurl }}" alt="{{ p.image_alt | escape }}" data-label="Imagen" data-caption="{{ p.figcaption | escape }}" width="1200" height="800"{% if include.destacado %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
+      {%- endif %}
+    </div>
+    <figcaption class="card__cap">{% if p.galeria %}{{ p.galeria[0].caption }}{% else %}{{ p.figcaption }}{% endif %}</figcaption>
+    <div class="card__tools" data-tools{% if p.embed %} data-embed="{{ p.embed }}" data-embed-title="Vista interactiva: {{ p.title | escape }}"{% endif %}></div>
   </figure>
   <div class="card__body">
+    {%- if p.destacado %}<p class="card__badge">Destacado</p>{% endif %}
     <p class="card__tags">{{ p.etiquetas }}</p>
     <h3 class="card__title"><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></h3>
     <p class="card__num"><span class="card__num-value">{{ p.cifra }}</span><span class="card__num-label">{{ p.cifra_pie }}</span></p>
@@ -20,9 +33,10 @@
     <p class="card__label">Resultado</p>
     <p class="card__r">{{ p.resultado | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
     <p class="card__actions">
+      <a class="btn" href="{{ p.url | prepend: site.baseurl }}" aria-label="Ver el caso: {{ p.title | escape }}">Ver caso</a>
       <a class="btn btn--outline" href="{{ p.repo }}" rel="noopener" aria-label="Código de {{ p.title | escape }}">Código</a>
       {%- if p.demo %}
-      <a class="btn" href="{{ p.demo }}" rel="noopener" aria-label="{{ p.demo_label }} de {{ p.title | escape }}">{{ p.demo_label }}</a>
+      <a class="btn btn--outline" href="{{ p.demo }}" rel="noopener" aria-label="{{ p.demo_label }} de {{ p.title | escape }}">{{ p.demo_label }}</a>
       {%- endif %}
     </p>
   </div>

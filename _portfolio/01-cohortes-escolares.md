@@ -9,6 +9,22 @@ resultado: "**151 de 1&nbsp;798 distritos** son de prioridad alta (151&nbsp;020 
 image: cohortes-escolares.webp
 image_alt: "Captura del dashboard de cohortes escolares 2025: sección del mapa con atajos por tipo de brecha y filtros por departamento, UGEL y zona"
 etiquetas: "Dashboard · Educación · Distritos del Perú"
+destacado: true
+categorias: [dashboards]
+embed: https://gabriela-pozo.github.io/Cursos/tarea_3_1/web/
+galeria:
+  - src: cohortes-resumen.webp
+    label: "Resumen"
+    alt: "Captura de la portada del dashboard de cohortes escolares 2025: la pregunta central, la respuesta en 20 segundos y una guía para leer el tablero"
+    caption: "Figura. Resumen del dashboard: la respuesta en 20 segundos y cómo leer el tablero. Fuentes: Censo 2025 (INEI) y Censo Educativo 2025 (Minedu)."
+  - src: cohortes-escolares.webp
+    label: "Mapa"
+    alt: "Captura del dashboard de cohortes escolares 2025: sección del mapa con atajos por tipo de brecha y filtros por departamento, UGEL y zona"
+    caption: "Figura. Mapa del dashboard, con atajos por tipo de brecha y filtros por departamento, UGEL y zona."
+  - src: cohortes-graficos.webp
+    label: "Prioridades"
+    alt: "Captura de la sección de prioridades del dashboard: controles para cambiar los pesos del índice, ranking de los 15 distritos de mayor prioridad y barras por departamento"
+    caption: "Figura. Prioridades: al cambiar los pesos del índice, el ranking y los gráficos se recalculan."
 cifra: "151"
 cifra_pie: "de 1 798 distritos son de prioridad alta"
 figcaption: "Figura. Captura del dashboard: mapa con atajos por tipo de brecha y filtros por departamento, UGEL y zona."

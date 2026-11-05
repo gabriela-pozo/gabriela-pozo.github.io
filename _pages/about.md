@@ -11,45 +11,66 @@ redirect_from:
   - /resume
 ---
 
-{%- assign foto = site.static_files | where: "path", "/images/foto.jpg" -%}
 <section id="inicio" class="hero" aria-labelledby="nombre">
-  {%- if foto.size > 0 %}
-  <img class="hero__photo" src="{{ '/images/foto.jpg' | prepend: site.baseurl }}" alt="Foto de Gabriela Pozo" width="400" height="400" fetchpriority="high">
-  {%- else %}
-  <div class="hero__mark" aria-hidden="true">GP</div>
-  {%- endif %}
-  <div class="hero__text">
-    <h1 id="nombre" class="hero__name">Gabriela Pozo</h1>
-    <p class="hero__tagline">Datos del Perú, con sus límites a la vista.</p>
-    <p class="hero__bio">Bachiller en Economía con experiencia en seguimiento de indicadores y tableros en Power BI en CEPLAN y el MIMP. Hoy uso Python y datos abiertos para responder preguntas sobre el Perú, y cuento también lo que no se pudo medir.</p>
-    <ul class="chips" aria-label="Herramientas y temas">
-      <li>Python</li>
-      <li>Power BI</li>
-      <li>STATA</li>
-      <li>Datos abiertos</li>
-    </ul>
-    <p class="hero__actions">
-      <a class="btn" href="#proyectos">Ver proyectos</a>
-      <a class="btn btn--outline" href="https://github.com/{{ site.author.github }}" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
-      {%- if site.author.linkedin %}
-      <a class="btn btn--outline" href="https://www.linkedin.com/in/{{ site.author.linkedin }}" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
-      {%- endif %}
-      <a class="btn btn--outline" href="mailto:{{ site.author.email }}"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Correo</a>
-      {%- include cv-button.html -%}
-    </p>
-  </div>
+  <h1 id="nombre" class="hero__name">Gabriela Pozo</h1>
+  <p class="hero__tagline">Datos del Perú, con sus límites a la vista.</p>
+  <p class="hero__bio">Bachiller en Economía con experiencia en seguimiento de indicadores y tableros en Power BI en CEPLAN y el MIMP. Hoy uso Python y datos abiertos para responder preguntas sobre el Perú, y cuento también lo que no se pudo medir.</p>
+  <ul class="chips" aria-label="Herramientas y temas">
+    <li>Python</li>
+    <li>Power BI</li>
+    <li>STATA</li>
+    <li>Datos abiertos</li>
+  </ul>
+  <p class="hero__actions">
+    <a class="btn" href="#proyectos">Ver proyectos</a>
+    <a class="btn btn--outline" href="https://github.com/{{ site.author.github }}" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+    {%- if site.author.linkedin %}
+    <a class="btn btn--outline" href="https://www.linkedin.com/in/{{ site.author.linkedin }}" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+    {%- endif %}
+    <a class="btn btn--outline" href="mailto:{{ site.author.email }}"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Correo</a>
+    {%- include cv-button.html -%}
+  </p>
 </section>
 
 <section id="proyectos" class="section" aria-labelledby="t-proyectos">
   <h2 id="t-proyectos" class="section__title">Proyectos</h2>
-  <p class="home-lead">Lo que une a mis proyectos: reglas escritas antes de mirar los datos, fuente enlazada en cada cifra y límites declarados.</p>
+  <p class="home-lead">Cinco proyectos con datos abiertos del Perú. Filtra por tipo, mira las imágenes y abre la vista interactiva para probar cada uno.</p>
+  <div class="filters" role="group" aria-label="Filtrar proyectos por tipo" data-filters>
+    <button type="button" data-filter="todos" aria-pressed="true">Todos</button>
+    <button type="button" data-filter="dashboards" aria-pressed="false">Dashboards</button>
+    <button type="button" data-filter="teledeteccion" aria-pressed="false">Teledetección</button>
+    <button type="button" data-filter="ia" aria-pressed="false">IA</button>
+    <button type="button" data-filter="datos-abiertos" aria-pressed="false">Datos abiertos</button>
+  </div>
+  <p class="filters__status" id="filters-status" role="status" aria-live="polite"></p>
   <div class="cards">
     {%- assign proyectos = site.portfolio | sort: "orden" -%}
-    {%- for p in proyectos limit: 3 -%}
+    {%- for p in proyectos -%}
       {% include project-card.html proyecto=p destacado=forloop.first %}
     {%- endfor -%}
   </div>
-  <p class="home-more">Más proyectos: <a href="https://gabriela-pozo.github.io/Ficafe_2026/" rel="noopener">Archivo FICAFE</a></p>
+</section>
+
+<section id="metodo" class="section" aria-labelledby="t-metodo">
+  <h2 id="t-metodo" class="section__title">Cómo trabajo</h2>
+  <p class="home-lead">Lo que une a mis proyectos, de principio a fin.</p>
+  <ol class="method">
+    <li>
+      <span class="method__n" aria-hidden="true">01</span>
+      <h3>Reglas antes de mirar</h3>
+      <p>Escribo las reglas antes de mirar los datos.</p>
+    </li>
+    <li>
+      <span class="method__n" aria-hidden="true">02</span>
+      <h3>Fuente en cada cifra</h3>
+      <p>Cada cifra lleva su fuente enlazada.</p>
+    </li>
+    <li>
+      <span class="method__n" aria-hidden="true">03</span>
+      <h3>Límites a la vista</h3>
+      <p>Declaro los límites y cuento también lo que no se pudo medir.</p>
+    </li>
+  </ol>
 </section>
 
 <section id="cv" class="section" aria-labelledby="t-cv">

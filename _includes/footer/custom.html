@@ -1,12 +1,108 @@
 <!-- start custom footer snippets -->
-<!-- Accesibilidad: el botón de tema (un enlace con role="button") responde a Enter y Espacio -->
 <script>
-  (function () {
-    var el = document.querySelector("#theme-toggle a");
-    if (!el) return;
-    el.addEventListener("keydown", function (e) {
-      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); el.click(); }
+(function () {
+  "use strict";
+
+  /* Accesibilidad: el botón de tema (un enlace con role="button") responde a Enter y Espacio */
+  var toggle = document.querySelector("#theme-toggle a");
+  if (toggle) toggle.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle.click(); }
+  });
+
+  /* Filtro de proyectos por tipo */
+  var group = document.querySelector("[data-filters]");
+  if (group) {
+    var cards = [].slice.call(document.querySelectorAll(".card[data-cats]"));
+    var status = document.getElementById("filters-status");
+    group.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-filter]");
+      if (!b) return;
+      [].forEach.call(group.querySelectorAll("button"), function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      var f = b.getAttribute("data-filter"), n = 0;
+      cards.forEach(function (c) {
+        var show = f === "todos" || (" " + c.getAttribute("data-cats") + " ").indexOf(" " + f + " ") > -1;
+        c.hidden = !show; if (show) n++;
+      });
+      if (status) status.textContent = n + (n === 1 ? " proyecto" : " proyectos") + (f === "todos" ? "" : " en «" + b.textContent + "»");
     });
-  })();
+  }
+
+  /* Tarjetas: pestañas de imágenes y vista interactiva en vivo (se carga solo al pedirla) */
+  [].forEach.call(document.querySelectorAll(".card__fig"), function (fig) {
+    var tools = fig.querySelector("[data-tools]");
+    var gallery = fig.querySelector(".gallery");
+    var cap = fig.querySelector(".card__cap");
+    var imgs = [].slice.call(gallery.querySelectorAll(".gallery__img"));
+    var live = null, liveBtn = null;
+    if (!tools) return;
+
+    function show(i) {
+      imgs.forEach(function (im, k) { im.classList.toggle("is-active", k === i); });
+      if (cap && imgs[i].getAttribute("data-caption")) cap.textContent = imgs[i].getAttribute("data-caption");
+      [].forEach.call(tools.querySelectorAll("[data-tab]"), function (t, k) { t.setAttribute("aria-pressed", k === i ? "true" : "false"); });
+    }
+    function closeLive() {
+      if (live) { live.remove(); live = null; }
+      gallery.classList.remove("is-live");
+      if (liveBtn) { liveBtn.setAttribute("aria-pressed", "false"); liveBtn.textContent = "Vista interactiva"; }
+    }
+
+    if (imgs.length > 1) {
+      var tabs = document.createElement("div");
+      tabs.className = "card__tabs"; tabs.setAttribute("role", "group"); tabs.setAttribute("aria-label", "Imágenes del proyecto");
+      imgs.forEach(function (im, i) {
+        var t = document.createElement("button");
+        t.type = "button"; t.setAttribute("data-tab", i); t.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+        t.textContent = im.getAttribute("data-label") || ("Imagen " + (i + 1));
+        t.addEventListener("click", function () { closeLive(); show(i); });
+        tabs.appendChild(t);
+      });
+      tools.appendChild(tabs);
+    }
+
+    var url = tools.getAttribute("data-embed");
+    if (url) {
+      liveBtn = document.createElement("button");
+      liveBtn.type = "button"; liveBtn.className = "card__live"; liveBtn.setAttribute("aria-pressed", "false");
+      liveBtn.textContent = "Vista interactiva";
+      liveBtn.addEventListener("click", function () {
+        if (live) { closeLive(); return; }
+        live = document.createElement("iframe");
+        live.className = "gallery__live"; live.src = url; live.loading = "lazy";
+        live.title = tools.getAttribute("data-embed-title") || "Vista interactiva";
+        gallery.appendChild(live); gallery.classList.add("is-live");
+        liveBtn.setAttribute("aria-pressed", "true"); liveBtn.textContent = "Ver imágenes";
+      });
+      tools.appendChild(liveBtn);
+    }
+    if (tools.children.length) tools.classList.add("has-tools");
+  });
+
+  /* Comparador antes/después */
+  [].forEach.call(document.querySelectorAll("[data-compare]"), function (fig) {
+    var range = fig.querySelector("input[type=range]");
+    var stage = fig.querySelector(".compare__stage");
+    function set(v) { fig.style.setProperty("--pos", v + "%"); range.setAttribute("aria-valuetext", Math.round(v) + " % hacia el después"); }
+    range.addEventListener("input", function () { set(range.value); });
+    function drag(e) {
+      var r = stage.getBoundingClientRect();
+      var v = Math.max(0, Math.min(100, ((e.clientX - r.left) / r.width) * 100));
+      range.value = v; set(v);
+    }
+    stage.addEventListener("pointerdown", function (e) { stage.setPointerCapture(e.pointerId); drag(e); stage._d = true; });
+    stage.addEventListener("pointermove", function (e) { if (stage._d) drag(e); });
+    stage.addEventListener("pointerup", function () { stage._d = false; });
+    set(range.value);
+  });
+
+  /* Barras interactivas: al enfocar o pasar sobre una fila se explica su resultado */
+  [].forEach.call(document.querySelectorAll("[data-bars]"), function (box) {
+    var detail = box.querySelector(".bars__detail");
+    [].forEach.call(box.querySelectorAll(".bars__row"), function (row) {
+      function say() { detail.textContent = row.getAttribute("data-detail"); [].forEach.call(box.querySelectorAll(".bars__row"), function (r) { r.classList.toggle("is-on", r === row); }); }
+      row.addEventListener("focus", say); row.addEventListener("mouseenter", say); row.addEventListener("click", say);
+    });
+  });
+})();
 </script>
 <!-- end custom footer snippets -->

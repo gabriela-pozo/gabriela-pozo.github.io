@@ -1,0 +1,21 @@
+{%- comment -%}
+  Comparador antes/después con deslizador accesible. Uso:
+    {% include compare.html antes="chichas-antes.webp" despues="chichas-despues.webp"
+       etiqueta_antes="15 oct 2026" etiqueta_despues="20 oct 2026"
+       alt_antes="..." alt_despues="..." pie="..." id="cmp-chichas" %}
+  Sin JavaScript se ve la mitad de cada imagen; con JavaScript, el deslizador o arrastrar mueve el corte.
+{%- endcomment -%}
+<figure class="compare" data-compare style="--pos: 50%">
+  <div class="compare__stage">
+    <img class="compare__img" src="{{ include.despues | prepend: '/images/' | prepend: site.baseurl }}" alt="{{ include.alt_despues | escape }}" width="876" height="942" loading="lazy">
+    <div class="compare__before">
+      <img class="compare__img" src="{{ include.antes | prepend: '/images/' | prepend: site.baseurl }}" alt="{{ include.alt_antes | escape }}" width="876" height="942" loading="lazy">
+    </div>
+    <span class="compare__tag compare__tag--before">Antes · {{ include.etiqueta_antes }}</span>
+    <span class="compare__tag compare__tag--after">Después · {{ include.etiqueta_despues }}</span>
+    <span class="compare__handle" aria-hidden="true"></span>
+  </div>
+  <label class="compare__label" for="{{ include.id }}">Desliza para comparar el antes y el después</label>
+  <input class="compare__range" id="{{ include.id }}" type="range" min="0" max="100" value="50" step="1">
+  <figcaption>{{ include.pie }}</figcaption>
+</figure>

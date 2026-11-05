@@ -8,13 +8,12 @@ Bachiller en Economía. Uso Python y datos abiertos para responder preguntas sob
 
 - `_config.yml`: nombre, descripción, URL y datos de contacto.
 - `_pages/about.md`: inicio (foto, bio, botones y proyectos destacados).
-- `_portfolio/`: un archivo por proyecto. Los datos de la tarjeta (pregunta, resultado, imagen, enlaces) van en el encabezado del archivo.
+- `_portfolio/`: un archivo por proyecto. Los datos de la tarjeta (pregunta, resultado, cifra clave, galería de imágenes, categorías para el filtro, vista interactiva y enlaces) van en el encabezado del archivo.
 - `_pages/cv.md`: CV breve.
 - `_sass/custom/_gabriela.scss`: paleta, tipografía y componentes propios.
 
 ## Pendientes antes de publicar
 
-- La portada muestra un monograma "GP" mientras no haya foto. Para usar una foto real, sube `images/foto.jpg` (cuadrada, mínimo 400 px): la portada la detecta y la muestra sola.
 - (Opcional) Completar `author.linkedin` en `_config.yml` (solo el usuario) para que aparezca el botón de LinkedIn.
 
 ## Publicación
