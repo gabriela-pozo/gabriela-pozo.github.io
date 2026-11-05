@@ -15,9 +15,8 @@ Bachiller en Economía. Uso Python y datos abiertos para responder preguntas sob
 
 ## Pendientes antes de publicar
 
-- Reemplazar `images/foto.jpg` (hoy es un marcador con las iniciales) por la foto real, con el mismo nombre.
-- Subir `files/CV-Gabriela-Pozo.pdf` **sin teléfono ni dirección**. El botón "Descargar CV" aparece solo cuando el archivo existe.
-- Completar `author.linkedin` en `_config.yml` (solo el usuario) para que aparezca el botón de LinkedIn.
+- `images/foto.jpg` es hoy un avatar generado (estilo GitHub). Si quieres, reemplázalo por una foto real con el mismo nombre y ajusta el `alt` en `_pages/about.md`.
+- (Opcional) Completar `author.linkedin` en `_config.yml` (solo el usuario) para que aparezca el botón de LinkedIn.
 
 ## Publicación
 
