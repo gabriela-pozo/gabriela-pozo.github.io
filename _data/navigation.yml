@@ -1,5 +1,5 @@
 # Menú superior: sitio de una sola página, cada enlace baja a una sección (ancla).
-# Los ids (#inicio, #proyectos, #cv, #contacto) están en _pages/about.md.
+# Los ids (#inicio, #proyectos, #contacto) están en _pages/about.md.
 
 main:
   - title: "Inicio"
@@ -7,9 +7,6 @@ main:
 
   - title: "Proyectos"
     url: /#proyectos
-
-  - title: "CV"
-    url: /#cv
 
   - title: "Contacto"
     url: /#contacto

@@ -21,7 +21,7 @@
       var f = b.getAttribute("data-filter"), n = 0;
       cards.forEach(function (c) {
         var show = f === "todos" || (" " + c.getAttribute("data-cats") + " ").indexOf(" " + f + " ") > -1;
-        c.hidden = !show; if (show) n++;
+        c.hidden = !show; if (show) { n++; c.classList.add("is-in"); }
       });
       if (status) status.textContent = n + (n === 1 ? " proyecto" : " proyectos") + (f === "todos" ? "" : " en «" + b.textContent + "»");
     });
@@ -101,6 +101,41 @@
     [].forEach.call(box.querySelectorAll(".bars__row"), function (row) {
       function say() { detail.textContent = row.getAttribute("data-detail"); [].forEach.call(box.querySelectorAll(".bars__row"), function (r) { r.classList.toggle("is-on", r === row); }); }
       row.addEventListener("focus", say); row.addEventListener("mouseenter", say); row.addEventListener("click", say);
+    });
+  });
+
+  /* Pulido: barra de progreso, sección activa en el menú, aparición suave y brillo que sigue al cursor */
+  var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var bar = document.createElement("div"); bar.className = "progress"; bar.setAttribute("aria-hidden", "true");
+  document.body.appendChild(bar);
+  var secs = [].slice.call(document.querySelectorAll(".page__content section[id]"));
+  var links = [].slice.call(document.querySelectorAll(".masthead a[href*='#']"));
+  function onScroll() {
+    var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+    bar.style.transform = "scaleX(" + (max > 0 ? Math.min(1, h.scrollTop / max) : 0) + ")";
+    var cur = null, y = window.scrollY + window.innerHeight * 0.3;
+    secs.forEach(function (s) { if (s.getBoundingClientRect().top + window.scrollY <= y) cur = s.id; });
+    links.forEach(function (a) {
+      var id = (a.getAttribute("href").split("#")[1] || "");
+      if (id && id === cur) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+    });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true }); window.addEventListener("resize", onScroll); onScroll();
+
+  if (!calm && "IntersectionObserver" in window) {
+    var targets = [].slice.call(document.querySelectorAll(".card, .section__title, .home-lead, .contact"));
+    document.documentElement.classList.add("gp-reveal");
+    targets.forEach(function (t) { t.classList.add("reveal"); });
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    targets.forEach(function (t) { io.observe(t); });
+    setTimeout(function () { targets.forEach(function (t) { t.classList.add("is-in"); }); }, 4000);
+  }
+  [].forEach.call(document.querySelectorAll(".card"), function (c) {
+    c.addEventListener("pointermove", function (e) {
+      var r = c.getBoundingClientRect();
+      c.style.setProperty("--mx", (e.clientX - r.left) + "px"); c.style.setProperty("--my", (e.clientY - r.top) + "px");
     });
   });
 })();

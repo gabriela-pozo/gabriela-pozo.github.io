@@ -12,7 +12,6 @@ redirect_from:
 ---
 
 <section id="inicio" class="hero" aria-labelledby="nombre">
-  <p class="eyebrow">Economista · Datos abiertos del Perú</p>
   <h1 id="nombre" class="hero__name">Gabriela Pozo</h1>
   <p class="hero__tagline">Datos del Perú, con sus límites a la vista.</p>
   <p class="hero__bio">Bachiller en Economía con experiencia en seguimiento de indicadores y tableros en Power BI en CEPLAN y el MIMP. Hoy uso Python y datos abiertos para responder preguntas sobre el Perú, y cuento también lo que no se pudo medir.</p>
@@ -49,24 +48,6 @@ redirect_from:
     {%- for p in proyectos -%}
       {% include project-card.html proyecto=p destacado=forloop.first %}
     {%- endfor -%}
-  </div>
-</section>
-
-<section id="cv" class="section" aria-labelledby="t-cv">
-  <h2 id="t-cv" class="section__title">Experiencia</h2>
-  <p class="home-lead">Prácticas preprofesionales en seguimiento de indicadores y tableros.</p>
-  <p class="cv__download">{% include cv-button.html %}</p>
-  <div class="cv-entry">
-    <p class="cv-entry__head"><strong>CEPLAN</strong><span>2024-2025</span></p>
-    <p class="cv-entry__body">Estudios prospectivos y tablero de control en Power BI.</p>
-  </div>
-  <div class="cv-entry">
-    <p class="cv-entry__head"><strong>MIMP</strong><span>2023-2024</span></p>
-    <p class="cv-entry__body">Seguimiento de indicadores de población.</p>
-  </div>
-  <div class="cv-entry">
-    <p class="cv-entry__head"><strong>Gerencia Regional de Comercio Exterior, Turismo y Artesanía del Cusco</strong><span>2022</span></p>
-    <p class="cv-entry__body">Indicadores de turismo.</p>
   </div>
 </section>
 
