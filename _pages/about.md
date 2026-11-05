@@ -54,25 +54,6 @@ redirect_from:
   </div>
 </section>
 
-<section id="novedades" class="section" aria-labelledby="t-novedades">
-  <h2 id="t-novedades" class="section__title">Novedades</h2>
-  <p class="home-lead">Los casos se actualizan cuando hay datos nuevos. Esto fue lo último, y así puedes enterarte de lo siguiente.</p>
-  <ol class="news">
-    {%- assign recientes = site.portfolio | sort: "date" | reverse -%}
-    {%- for p in recientes -%}
-    <li>
-      <time datetime="{{ p.date | date: '%Y-%m-%d' }}">{% include fecha.html d=p.date corta=true %}</time>
-      <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
-    </li>
-    {%- endfor -%}
-  </ol>
-  <p class="subscribe">
-    <a class="btn" href="{{ '/publicaciones.xml' | prepend: site.baseurl }}"><i class="fa-solid fa-rss" aria-hidden="true"></i> Suscribirme por RSS</a>
-    <a class="btn btn--outline" href="https://github.com/{{ site.author.github }}" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> Seguir en GitHub</a>
-    <a class="btn btn--outline" href="mailto:{{ site.author.email }}?subject=Av%C3%ADsame%20de%20nuevas%20publicaciones"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Avísame por correo</a>
-  </p>
-</section>
-
 <section id="contacto" class="section" aria-labelledby="t-contacto">
   <h2 id="t-contacto" class="section__title">Contacto</h2>
   <div class="contact">
