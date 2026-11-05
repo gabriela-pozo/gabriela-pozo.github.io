@@ -51,28 +51,6 @@ redirect_from:
   </div>
 </section>
 
-<section id="metodo" class="section" aria-labelledby="t-metodo">
-  <h2 id="t-metodo" class="section__title">Cómo trabajo</h2>
-  <p class="home-lead">Lo que une a mis proyectos, de principio a fin.</p>
-  <ol class="method">
-    <li>
-      <span class="method__n" aria-hidden="true">01</span>
-      <h3>Reglas antes de mirar</h3>
-      <p>Escribo las reglas antes de mirar los datos.</p>
-    </li>
-    <li>
-      <span class="method__n" aria-hidden="true">02</span>
-      <h3>Fuente en cada cifra</h3>
-      <p>Cada cifra lleva su fuente enlazada.</p>
-    </li>
-    <li>
-      <span class="method__n" aria-hidden="true">03</span>
-      <h3>Límites a la vista</h3>
-      <p>Declaro los límites y cuento también lo que no se pudo medir.</p>
-    </li>
-  </ol>
-</section>
-
 <section id="cv" class="section" aria-labelledby="t-cv">
   <h2 id="t-cv" class="section__title">CV</h2>
   <p class="cv__download">{% include cv-button.html %}</p>
