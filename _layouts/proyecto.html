@@ -4,6 +4,7 @@ layout: single
 
 {%- comment -%} Página de un proyecto: figura con pie, cifra clave, pregunta, resultado y botones; luego el texto propio de cada archivo de _portfolio/. {%- endcomment -%}
 <div class="project">
+  <p class="card__tags">{{ page.etiquetas }}</p>
   <figure class="project__fig">
     <img class="project__img" src="{{ page.image | prepend: '/images/' | prepend: site.baseurl }}" alt="{{ page.image_alt | escape }}" width="1200" height="800" fetchpriority="high">
     <figcaption>{{ page.figcaption }}</figcaption>

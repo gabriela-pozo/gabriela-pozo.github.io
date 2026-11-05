@@ -8,6 +8,7 @@ pregunta: "¿Qué distritos enfrentarán más presión o brecha en el sistema es
 resultado: "**151 de 1&nbsp;798 distritos** son de prioridad alta (151&nbsp;020 niños de 3 a 5 años, 11,0&nbsp;% del país); el **44&nbsp;%** está en Loreto, Huánuco y San Martín y **36 distritos** tienen triple brecha. No es una proyección oficial."
 image: cohortes-escolares.webp
 image_alt: "Captura del dashboard de cohortes escolares 2025: sección del mapa con atajos por tipo de brecha y filtros por departamento, UGEL y zona"
+etiquetas: "Dashboard · Educación · Distritos del Perú"
 cifra: "151"
 cifra_pie: "de 1 798 distritos son de prioridad alta"
 figcaption: "Figura. Captura del dashboard: mapa con atajos por tipo de brecha y filtros por departamento, UGEL y zona."

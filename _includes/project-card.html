@@ -2,7 +2,7 @@
   Tarjeta de proyecto. Uso:
     {% include project-card.html proyecto=p destacado=true %}
   Campos del front matter de cada archivo de _portfolio/:
-    title, image, image_alt, figcaption (pie de figura), cifra y cifra_pie (cifra clave),
+    title, etiquetas, image, image_alt, figcaption (pie de figura), cifra y cifra_pie (cifra clave),
     pregunta, resultado (markdown; la cifra va en **negrita**), repo, demo (opcional), demo_label
 {%- endcomment -%}
 {%- assign p = include.proyecto -%}
@@ -12,6 +12,7 @@
     <figcaption>{{ p.figcaption }}</figcaption>
   </figure>
   <div class="card__body">
+    <p class="card__tags">{{ p.etiquetas }}</p>
     <h3 class="card__title"><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></h3>
     <p class="card__num"><span class="card__num-value">{{ p.cifra }}</span><span class="card__num-label">{{ p.cifra_pie }}</span></p>
     <p class="card__label">Pregunta</p>

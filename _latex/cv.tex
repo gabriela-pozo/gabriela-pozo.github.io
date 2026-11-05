@@ -1,0 +1,115 @@
+% CV de Gabriela Pozo. Compilar con XeLaTeX o Tectonic:
+%   tectonic cv.tex        (o)        xelatex cv.tex
+% El PDF resultante se copia a ../files/CV-Gabriela-Pozo.pdf.
+% No incluir teléfono ni dirección: el PDF es público.
+\documentclass[10.5pt,a4paper]{article}
+
+\usepackage[margin=1.9cm,top=1.6cm,bottom=1.6cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
+\setsansfont{TeX Gyre Heros}
+\usepackage[spanish]{babel}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+
+\definecolor{acento}{HTML}{B8431B}   % terracota del sitio
+\definecolor{tinta}{HTML}{1C1B19}
+\definecolor{gris}{HTML}{5A554C}
+\color{tinta}
+\hypersetup{pdftitle={CV, Gabriela Pozo}, pdfauthor={Gabriela Pozo}, pdfsubject={Curriculum vitae}}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.08}
+
+% Secciones: sans, mayúsculas pequeñas y filete fino
+\titleformat{\section}{\sffamily\bfseries\small\color{acento}\MakeUppercase}{}{0pt}{}[\vspace{-0.55em}\rule{\linewidth}{0.4pt}]
+\titlespacing*{\section}{0pt}{1.05em}{0.5em}
+
+\setlist[itemize]{leftmargin=1.1em,itemsep=0.15em,topsep=0.2em,parsep=0pt,label={\color{acento}\textbullet}}
+
+% \entrada{organización}{fechas}{rol}  y a continuación el itemize
+\newcommand{\entrada}[3]{%
+  \vspace{0.55em}\par\noindent{\bfseries #1}\hfill{\color{gris}\small #2}\par
+  {\itshape\color{gris} #3}\par\vspace{0.1em}}
+% \linea{texto en negrita}{fecha}  (una línea con fecha a la derecha)
+\newcommand{\linea}[2]{\par\noindent #1\hfill{\color{gris}\small #2}\par}
+
+\begin{document}
+
+% ---------- Encabezado ----------
+{\sffamily\bfseries\fontsize{22}{26}\selectfont Gabriela Sthefany Pozo Born\'as\par}
+\vspace{0.3em}
+{\color{gris}Bachiller en Econom\'ia}\par
+\vspace{0.35em}
+{\small
+\href{mailto:gabrielapb36@gmail.com}{\color{acento}gabrielapb36@gmail.com}\quad\textbullet\quad
+\href{https://github.com/gabriela-pozo}{\color{acento}github.com/gabriela-pozo}\quad\textbullet\quad
+\href{https://gabriela-pozo.github.io}{\color{acento}gabriela-pozo.github.io}\par}
+
+\vspace{0.7em}
+Bachiller en econom\'ia con experiencia en an\'alisis de informaci\'on, elaboraci\'on de tableros de control, seguimiento de indicadores y evaluaci\'on de metas. He participado en estudios prospectivos y estrat\'egicos, as\'i como en el an\'alisis de indicadores de poblaci\'on y turismo. Con inter\'es en aplicar evidencia y an\'alisis para optimizar procesos, generar valor y contribuir a la toma de decisiones en entornos din\'amicos.
+
+% ---------- Formación académica ----------
+\section{Formaci\'on acad\'emica}
+\linea{{\bfseries Universidad Andina del Cusco (UAC)} \textemdash\ Bachiller en Econom\'ia}{Diciembre, 2022}
+
+% ---------- Experiencia ----------
+\section{\'Areas de experiencia}
+
+\entrada{Centro Nacional de Planeamiento Estrat\'egico}{2 de julio, 2024 \textendash\ 25 de mayo, 2025}{Pr\'acticas profesionales}
+\begin{itemize}
+  \item Participaci\'on en la elaboraci\'on de estudios prospectivos y estrat\'egicos, incluyendo la actualizaci\'on de fichas de tendencias y eventos futuros.
+  \item Apoyo en la recopilaci\'on y sistematizaci\'on de datos relevantes para el seguimiento y evaluaci\'on del cumplimiento de metas de la direcci\'on.
+  \item Elaboraci\'on de un tablero de control en Power BI y fichas de proyectos estrat\'egicos de infraestructura pendientes.
+  \item Apoyo en la generaci\'on de materiales y desarrollo de eventos organizados.
+\end{itemize}
+
+\entrada{Ministerio de la Mujer y Poblaciones Vulnerables}{12 de julio, 2023 \textendash\ 30 de junio, 2024}{Pr\'acticas profesionales}
+\begin{itemize}
+  \item Apoyo en el seguimiento y validaci\'on de indicadores de poblaci\'on y desarrollo de acuerdo con el Consenso de Montevideo sobre poblaci\'on y desarrollo.
+  \item Apoyo en la revisi\'on del documento \emph{Alerta Regional: Indicadores poblacionales}.
+  \item Apoyo en brindar informaci\'on a Organizaciones de Voluntariado a fin de que postulen al financiamiento de medidas relacionadas con la implementaci\'on de iniciativas de voluntariado, dirigidas a poblaciones vulnerables en zonas de crisis humanitaria.
+  \item Sistematizaci\'on de la informaci\'on de las postulaciones presentadas por Organizaciones de Voluntariado.
+\end{itemize}
+
+\entrada{Gerencia Regional de Comercio Exterior, Turismo y Artesan\'ia Cusco}{29 de marzo, 2022 \textendash\ 2 de agosto, 2022}{Pr\'acticas pre profesionales}
+\begin{itemize}
+  \item Elaboraci\'on de un informe sobre la situaci\'on de los principales indicadores del turismo en la regi\'on del Cusco.
+  \item Apoyo en la programaci\'on y seguimiento del Plan Operativo Institucional y su registro en el aplicativo Ceplan V.01.
+  \item Apoyo en la realizaci\'on de reuniones y mesas de di\'alogo entre los sectores involucrados en la actividad tur\'istica.
+\end{itemize}
+
+% ---------- Idiomas ----------
+\section{Idiomas}
+Ingl\'es intermedio. Instituto Cultural Peruano Norteamericano Cusco.
+
+% ---------- Informática ----------
+\section{Inform\'atica}
+\linea{Centro de Tecnolog\'ias de Informaci\'on y Comunicaciones de la UNI \textemdash\ {\bfseries Python b\'asico}}{Julio y agosto, 2025}
+\linea{Instituto Nacional de Estad\'istica e Inform\'atica (INEI) \textemdash\ {\bfseries An\'alisis y Explotaci\'on de Bases de Datos con Power BI}}{Junio y julio, 2023}
+\linea{ICDL Am\'ericas \textemdash\ {\bfseries Hojas de c\'alculo / Spreadsheets MS Office 2016/6.0}}{Noviembre, 2021}
+\linea{Instituto Nacional de Estad\'istica e Inform\'atica (INEI) \textemdash\ {\bfseries STATA Intermedio}}{Octubre \textendash\ noviembre, 2021}
+
+% ---------- Formación complementaria ----------
+\section{Formaci\'on complementaria}
+\begin{itemize}
+  \item Curso \textsc{Bloomberg Spreadsheet Analysis}, Bloomberg for Education, marzo 2026.
+  \item Curso \textsc{Bloomberg Market Concepts}, Bloomberg for Education, noviembre 2025.
+  \item Curso <<Gesti\'on de proyectos aplicada al sector p\'ublico y privado de Am\'erica Latina>>, CAF, 25 de agosto, 2025.
+  \item Curso de invierno para alumnos 2024 (macroeconom\'ia, microeconom\'ia, econometr\'ia), Banco Central de Reserva del Per\'u, 5 al 23 de agosto, 2024.
+  \item Curso taller de indicadores demogr\'aficos y proyecciones de poblaci\'on, Instituto Nacional de Estad\'istica e Inform\'atica, 8 al 11 de julio, 2024.
+\end{itemize}
+
+% ---------- Otras actividades ----------
+\section{Otras actividades}
+\begin{itemize}
+  \item {\bfseries Voluntaria del \'area de comunicaciones de la Casa Ronald McDonald.} Apoyo en el seguimiento de m\'etricas de las redes sociales, actividades de recaudaci\'on a trav\'es de la venta de merchandising.
+  \item {\bfseries Programa de Voluntarios de las Naciones Unidas} (8--12 de mayo, 22--26 de mayo, 29 de mayo--2 de junio del 2023). Voluntaria en el marco de llamadas de monitoreo del Proyecto de Voluntariado \emph{Nutriendo esperanzas, protegiendo familias}.
+\end{itemize}
+
+\end{document}

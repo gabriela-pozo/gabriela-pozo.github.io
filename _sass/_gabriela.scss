@@ -241,6 +241,13 @@ a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
   border-top: 1px solid var(--gp-line);
 }
 .card__body { display: flex; flex-direction: column; flex: 1; padding: 1.25rem 1.25rem 1.5rem; }
+.card__tags {
+  margin: 0 0 0.125rem !important;
+  font-size: 1rem !important;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--gp-muted);
+}
 .card__title { font-size: 1.5rem; margin: 0 0 0.25rem; }
 .card--featured .card__title { font-size: 1.75rem; }
 .card__title a {
