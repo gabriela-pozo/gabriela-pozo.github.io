@@ -17,7 +17,7 @@ layout: single
   <p class="card__label">{{ t.hallazgo }}</p>
   <p class="project__r">{{ page.resultado | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
   <p class="card__actions">
-    <a class="btn btn--outline" href="{{ page.repo }}" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> {{ t.codigo }}</a>
+    <a class="btn btn--outline btn--icon" href="{{ page.repo }}" rel="noopener" aria-label="{{ t.codigo_aria }} {{ page.title | escape }}" title="{{ t.codigo }}"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
     {%- if page.demo %}
     <a class="btn" href="{{ page.demo }}" rel="noopener">{{ page.demo_label }}</a>
     {%- endif %}

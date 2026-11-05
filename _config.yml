@@ -91,6 +91,7 @@ exclude:
   - Capfile
   - config
   - CV-Gabriela Pozo.pdf
+  - CV-Gabriela-Pozo.pdf
   - docker-compose.yaml
   - Dockerfile
   - Gemfile

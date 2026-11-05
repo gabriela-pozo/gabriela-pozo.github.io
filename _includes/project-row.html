@@ -15,7 +15,7 @@
     <p class="row__text">{{ p.excerpt }}</p>
     <p class="row__actions">
       <a class="btn" href="{{ p.url | prepend: site.baseurl }}" aria-label="{{ t.leer_aria }}: {{ p.title | escape }}">{{ t.leer }}</a>
-      <a class="btn btn--outline" href="{{ p.repo }}" rel="noopener" aria-label="{{ t.codigo_aria }} {{ p.title | escape }}"><i class="fa-brands fa-github" aria-hidden="true"></i> {{ t.codigo }}</a>
+      <a class="btn btn--outline btn--icon" href="{{ p.repo }}" rel="noopener" aria-label="{{ t.codigo_aria }} {{ p.title | escape }}" title="{{ t.codigo }}"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
     </p>
   </div>
 </article>

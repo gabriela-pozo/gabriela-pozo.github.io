@@ -731,3 +731,38 @@ html[data-theme="dark"] .activity { background: #F2F5F9; }
 
 /* ---------- Selector de idioma ---------- */
 .lang-switch a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; font-family: var(--gp-mono); font-weight: 600; letter-spacing: 0.02em; }
+
+
+/* ---------- Tamaños de texto más contenidos y botón de código solo con logo ---------- */
+.page__content .hero__name { font-size: clamp(2.125rem, 6vw, 3.25rem); letter-spacing: -0.035em; line-height: 1.05; }
+.page__content .hero__tagline { font-size: clamp(1.125rem, 2.6vw, 1.5rem) !important; }
+.page__content .hero__bio { font-size: 1rem; }
+.page__content .home-lead { font-size: 1rem; }
+.page__content .section__title { font-size: clamp(1.5rem, 3.2vw, 1.875rem); }
+.page__content .subhead { font-size: 1.25rem; }
+.card--featured .card__title { font-size: clamp(1.375rem, 2.6vw, 1.75rem); }
+.card:not(.card--featured) .card__title { font-size: 1.25rem; }
+.card--featured .card__num-value { font-size: clamp(2.25rem, 6vw, 3.25rem); }
+.card__num-value { font-size: clamp(2rem, 5vw, 2.5rem); }
+.card__q, .project__q { font-size: 1.0625em !important; }
+.row__title { font-size: 1.125rem; }
+.contact__text { font-size: clamp(1.125rem, 2.6vw, 1.5rem) !important; }
+.page__content .page__title, .page__title { font-size: clamp(1.625rem, 4.2vw, 2.25rem); line-height: 1.15; }
+.page__content h2 { font-size: clamp(1.375rem, 3vw, 1.625rem); }
+.project__num .card__num-value { font-size: clamp(2rem, 5vw, 2.75rem); }
+@media (min-width: 720px) { .card--featured .card__title { font-size: 1.75rem; } }
+
+.btn--icon { flex: 0 0 auto !important; min-width: 44px; padding-left: 0.875rem; padding-right: 0.875rem; }
+.btn--icon i { font-size: 1.25rem; margin: 0; }
+/* segunda pasada: escala más sobria en pantallas grandes */
+.page__content .hero__name { font-size: clamp(2.125rem, 5vw, 2.75rem); }
+.page__content .hero__tagline { font-size: clamp(1.125rem, 2.4vw, 1.375rem) !important; }
+.page__content .section__title { font-size: clamp(1.375rem, 2.6vw, 1.5rem); }
+.card--featured .card__title { font-size: clamp(1.375rem, 2.4vw, 1.5rem); }
+@media (min-width: 720px) { .card--featured .card__title { font-size: 1.5rem; } }
+.card--featured .card__num-value { font-size: clamp(2.25rem, 5vw, 2.5rem); }
+.card__num-value { font-size: clamp(2rem, 4.5vw, 2.25rem); }
+.page__content .page__title, .page__title { font-size: clamp(1.625rem, 3.6vw, 1.75rem); }
+.page__content h2 { font-size: clamp(1.25rem, 2.6vw, 1.375rem); }
+.project__num .card__num-value { font-size: clamp(2rem, 4.5vw, 2.25rem); }
+.contact__text { font-size: clamp(1.125rem, 2.4vw, 1.375rem) !important; }

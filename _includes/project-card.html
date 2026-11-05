@@ -35,7 +35,7 @@
     <p class="card__r">{{ p.resultado | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
     <p class="card__actions">
       <a class="btn" href="{{ p.url | prepend: site.baseurl }}" aria-label="{{ t.leer_aria }}: {{ p.title | escape }}">{{ t.leer }}</a>
-      <a class="btn btn--outline" href="{{ p.repo }}" rel="noopener" aria-label="{{ t.codigo_aria }} {{ p.title | escape }}"><i class="fa-brands fa-github" aria-hidden="true"></i> {{ t.codigo }}</a>
+      <a class="btn btn--outline btn--icon" href="{{ p.repo }}" rel="noopener" aria-label="{{ t.codigo_aria }} {{ p.title | escape }}" title="{{ t.codigo }}"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
       {%- if p.demo %}
       <a class="btn btn--outline" href="{{ p.demo }}" rel="noopener" aria-label="{{ p.demo_label }} de {{ p.title | escape }}">{{ p.demo_label }}</a>
       {%- endif %}

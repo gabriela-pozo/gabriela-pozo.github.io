@@ -16,7 +16,7 @@ hide_title: true
       <p class="hero__tagline">What the data says, and what it doesn't yet.</p>
     </div>
   </div>
-  <p class="hero__bio">Open-data analysis: each case starts with a question, shows the finding with its source, and says what could not be measured. I come from tracking indicators in the public sector.</p>
+  <p class="hero__bio">Open-data analysis: a question, a finding with its source and what could not be measured. I come from tracking indicators and foresight analysis in the public sector; today I take that craft to dashboards, satellite imagery and AI evaluation.</p>
   <ul class="chips" aria-label="Topics covered here">
     <li>Education</li>
     <li>Wildfires</li>
