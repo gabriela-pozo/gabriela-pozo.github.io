@@ -15,7 +15,7 @@ layout: single
   <p class="card__label">Resultado</p>
   <p class="project__r">{{ page.resultado | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
   <p class="card__actions">
-    <a class="btn btn--outline" href="{{ page.repo }}" rel="noopener">Repo</a>
+    <a class="btn btn--outline" href="{{ page.repo }}" rel="noopener">Código</a>
     {%- if page.demo %}
     <a class="btn" href="{{ page.demo }}" rel="noopener">{{ page.demo_label }}</a>
     {%- endif %}

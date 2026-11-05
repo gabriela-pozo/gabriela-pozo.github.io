@@ -20,7 +20,7 @@
     <p class="card__label">Resultado</p>
     <p class="card__r">{{ p.resultado | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
     <p class="card__actions">
-      <a class="btn btn--outline" href="{{ p.repo }}" rel="noopener" aria-label="Repo de {{ p.title | escape }}">Repo</a>
+      <a class="btn btn--outline" href="{{ p.repo }}" rel="noopener" aria-label="Código de {{ p.title | escape }}">Código</a>
       {%- if p.demo %}
       <a class="btn" href="{{ p.demo }}" rel="noopener" aria-label="{{ p.demo_label }} de {{ p.title | escape }}">{{ p.demo_label }}</a>
       {%- endif %}

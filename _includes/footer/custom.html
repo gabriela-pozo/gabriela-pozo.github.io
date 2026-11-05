@@ -1,3 +1,12 @@
 <!-- start custom footer snippets -->
-<!-- (sin scripts adicionales) -->
+<!-- Accesibilidad: el botón de tema (un enlace con role="button") responde a Enter y Espacio -->
+<script>
+  (function () {
+    var el = document.querySelector("#theme-toggle a");
+    if (!el) return;
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); el.click(); }
+    });
+  })();
+</script>
 <!-- end custom footer snippets -->

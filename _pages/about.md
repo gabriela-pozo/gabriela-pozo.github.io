@@ -56,6 +56,7 @@ redirect_from:
     <p class="cv-entry__head"><strong>Gerencia Regional de Comercio Exterior, Turismo y Artesanía del Cusco</strong><span>2022</span></p>
     <p class="cv-entry__body">Indicadores de turismo.</p>
   </div>
+  <p class="cv__tools"><span class="cv__tools-label">Herramientas</span> Python · Power BI · STATA</p>
 </section>
 
 <section id="contacto" class="section" aria-labelledby="t-contacto">

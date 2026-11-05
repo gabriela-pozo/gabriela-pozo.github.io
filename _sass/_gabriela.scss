@@ -16,6 +16,11 @@
   --gp-accent-hover: #075A4F;
   --gp-on-accent: #FFFFFF;   /*  5,7:1 sobre el acento */
 
+  /* escala de radios: interior, tarjeta, píldora */
+  --gp-radius-s: 12px;
+  --gp-radius-m: 16px;
+  --gp-radius-pill: 999px;
+
   --gp-display: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   --gp-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --gp-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
@@ -129,7 +134,7 @@ a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
   font-size: 1rem;
   font-weight: 500;
   color: var(--gp-ink);
-  border-radius: 999px;
+  border-radius: var(--gp-radius-pill);
 }
 .greedy-nav a:hover { color: var(--gp-accent); }
 .greedy-nav .visible-links li:first-child a {
@@ -171,7 +176,7 @@ a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
   color: var(--gp-on-accent) !important;
   background-color: var(--gp-accent);
   border: 1.5px solid var(--gp-accent) !important;
-  border-radius: 999px;
+  border-radius: var(--gp-radius-pill);
   text-decoration: none !important;
 }
 .btn:hover { background-color: var(--gp-accent-hover); border-color: var(--gp-accent-hover) !important; }
@@ -195,7 +200,7 @@ html { scroll-padding-top: 5rem; }            /* la barra superior es fija */
   height: 96px;
   object-fit: cover;
   border: 1px solid var(--gp-line);
-  border-radius: 22px;
+  border-radius: 25%;
 }
 .hero__name { margin: 0 0 0.5rem; font-size: clamp(2.5rem, 11vw, 4.25rem); line-height: 1.02; letter-spacing: -0.035em; }
 .hero__tagline {
@@ -215,7 +220,7 @@ html { scroll-padding-top: 5rem; }            /* la barra superior es fija */
   padding: 1.5rem;
   background: var(--gp-surface);
   border: 1px solid var(--gp-line);
-  border-radius: 16px;
+  border-radius: var(--gp-radius-m);
 }
 .contact__text { margin: 0 0 1rem; font-family: var(--gp-display); font-size: 1.375em !important; font-weight: 500; line-height: 1.3; letter-spacing: -0.01em; }
 .contact__actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; }
@@ -228,7 +233,7 @@ html { scroll-padding-top: 5rem; }            /* la barra superior es fija */
   flex-direction: column;
   background: var(--gp-surface);
   border: 1px solid var(--gp-line);
-  border-radius: 16px;
+  border-radius: var(--gp-radius-m);
   overflow: hidden;
 }
 .card__fig, .project__fig { display: block; margin: 0; }
@@ -272,7 +277,7 @@ html { scroll-padding-top: 5rem; }            /* la barra superior es fija */
   max-width: none !important;
   background: var(--gp-paper);
   border: 1px solid var(--gp-line);
-  border-radius: 12px;
+  border-radius: var(--gp-radius-s);
 }
 .card__num-value {
   display: block;
@@ -301,7 +306,7 @@ html { scroll-padding-top: 5rem; }            /* la barra superior es fija */
 .card__actions .btn { margin: 0; flex: 1 1 7rem; }
 
 /* ---------- Página de proyecto ---------- */
-.project__fig { margin-bottom: 1.5rem; background: var(--gp-surface); border: 1px solid var(--gp-line); border-radius: 16px; overflow: hidden; }
+.project__fig { margin-bottom: 1.5rem; background: var(--gp-surface); border: 1px solid var(--gp-line); border-radius: var(--gp-radius-m); overflow: hidden; }
 .project__q { font-size: 1.3125em !important; }
 
 .embed {
@@ -311,7 +316,7 @@ html { scroll-padding-top: 5rem; }            /* la barra superior es fija */
   min-height: 70vh;
   overflow: hidden;
   border: 1px solid var(--gp-line);
-  border-radius: 16px;
+  border-radius: var(--gp-radius-m);
 }
 .embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 .embed__fallback { margin-top: 0.75rem; }
@@ -371,5 +376,24 @@ html { scroll-padding-top: 5rem; }            /* la barra superior es fija */
 
 @media (min-width: 720px) {
   .hero { grid-template-columns: auto 1fr; gap: 2.5rem; align-items: center; padding-bottom: 1.5rem; }
-  .hero__photo { width: 168px; height: 168px; border-radius: 40px; }
+  .hero__photo { width: 168px; height: 168px; }
 }
+
+/* ---------- Accesibilidad ---------- */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  min-height: 44px;
+  font-weight: 600;
+  color: var(--gp-on-accent);
+  background: var(--gp-accent);
+  border-radius: var(--gp-radius-pill);
+  text-decoration: none;
+}
+.skip-link:focus { top: 8px; }
+
+.cv__tools { margin: 1rem 0 0 !important; padding-top: 0.75rem; border-top: 1px solid var(--gp-line); font-family: var(--gp-mono); }
+.cv__tools-label { color: var(--gp-muted); margin-right: 0.5rem; }

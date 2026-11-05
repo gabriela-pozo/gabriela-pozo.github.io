@@ -4,5 +4,5 @@
 {%- endcomment -%}
 {%- assign cv_file = site.static_files | where: "path", "/files/CV-Gabriela-Pozo.pdf" -%}
 {%- if cv_file.size > 0 -%}
-<a class="btn" href="{{ '/files/CV-Gabriela-Pozo.pdf' | prepend: site.baseurl }}" download><i class="fa-solid fa-download" aria-hidden="true"></i> Descargar CV</a>
+<a class="btn" href="{{ '/files/CV-Gabriela-Pozo.pdf' | prepend: site.baseurl }}" download><i class="fa-solid fa-download" aria-hidden="true"></i> Descargar CV (PDF)</a>
 {%- endif -%}
