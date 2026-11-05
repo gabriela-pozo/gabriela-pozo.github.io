@@ -8,7 +8,7 @@
 {%- assign p = include.proyecto -%}
 <article class="card{% if include.destacado %} card--featured{% endif %}">
   <figure class="card__fig">
-    <img class="card__img" src="{{ p.image | prepend: '/images/' | prepend: site.baseurl }}" alt="{{ p.image_alt | escape }}" width="1200" height="800"{% if include.destacado %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
+    <a class="card__imglink" href="{{ p.url | prepend: site.baseurl }}" tabindex="-1" aria-hidden="true"><img class="card__img" src="{{ p.image | prepend: '/images/' | prepend: site.baseurl }}" alt="{{ p.image_alt | escape }}" width="1200" height="800"{% if include.destacado %} fetchpriority="high"{% else %} loading="lazy"{% endif %}></a>
     <figcaption>{{ p.figcaption }}</figcaption>
   </figure>
   <div class="card__body">

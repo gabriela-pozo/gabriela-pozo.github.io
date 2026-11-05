@@ -2,12 +2,13 @@
 %   tectonic cv.tex        (o)        xelatex cv.tex
 % El PDF resultante se copia a ../files/CV-Gabriela-Pozo.pdf.
 % No incluir teléfono ni dirección: el PDF es público.
-\documentclass[10.5pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 
-\usepackage[margin=1.9cm,top=1.6cm,bottom=1.6cm]{geometry}
+\usepackage[left=1.8cm,right=1.8cm,top=1.3cm,bottom=1.2cm]{geometry}
 \usepackage{fontspec}
-\setmainfont{TeX Gyre Pagella}
-\setsansfont{TeX Gyre Heros}
+% Fuentes por archivo (así las encuentra Tectonic y también TeX Live)
+\setmainfont{texgyrepagella}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\setsansfont{texgyreheros}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
 \usepackage[spanish]{babel}
 \usepackage{xcolor}
 \usepackage{enumitem}
@@ -24,20 +25,20 @@
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\linespread{1.08}
+\linespread{1.05}
 
 % Secciones: sans, mayúsculas pequeñas y filete fino
 \titleformat{\section}{\sffamily\bfseries\small\color{acento}\MakeUppercase}{}{0pt}{}[\vspace{-0.55em}\rule{\linewidth}{0.4pt}]
-\titlespacing*{\section}{0pt}{1.05em}{0.5em}
+\titlespacing*{\section}{0pt}{0.85em}{0.45em}
 
-\setlist[itemize]{leftmargin=1.1em,itemsep=0.15em,topsep=0.2em,parsep=0pt,label={\color{acento}\textbullet}}
+\setlist[itemize]{leftmargin=1.1em,itemsep=0.1em,topsep=0.15em,parsep=0pt,label={\color{acento}\textbullet}}
 
 % \entrada{organización}{fechas}{rol}  y a continuación el itemize
 \newcommand{\entrada}[3]{%
-  \vspace{0.55em}\par\noindent{\bfseries #1}\hfill{\color{gris}\small #2}\par
+  \vspace{0.4em}\par\noindent{\bfseries #1}\hfill{\color{gris}\small #2}\par
   {\itshape\color{gris} #3}\par\vspace{0.1em}}
 % \linea{texto en negrita}{fecha}  (una línea con fecha a la derecha)
-\newcommand{\linea}[2]{\par\noindent #1\hfill{\color{gris}\small #2}\par}
+\newcommand{\linea}[2]{\par\noindent\parbox[t]{0.76\linewidth}{#1}\hfill\parbox[t]{0.22\linewidth}{\raggedleft\color{gris}\small #2}\par\vspace{0.12em}}
 
 \begin{document}
 
@@ -56,7 +57,7 @@ Bachiller en econom\'ia con experiencia en an\'alisis de informaci\'on, elaborac
 
 % ---------- Formación académica ----------
 \section{Formaci\'on acad\'emica}
-\linea{{\bfseries Universidad Andina del Cusco (UAC)} \textemdash\ Bachiller en Econom\'ia}{Diciembre, 2022}
+\entrada{Universidad Andina del Cusco (UAC)}{Diciembre, 2022}{Bachiller en Econom\'ia}
 
 % ---------- Experiencia ----------
 \section{\'Areas de experiencia}
@@ -89,11 +90,12 @@ Bachiller en econom\'ia con experiencia en an\'alisis de informaci\'on, elaborac
 Ingl\'es intermedio. Instituto Cultural Peruano Norteamericano Cusco.
 
 % ---------- Informática ----------
+\newpage
 \section{Inform\'atica}
-\linea{Centro de Tecnolog\'ias de Informaci\'on y Comunicaciones de la UNI \textemdash\ {\bfseries Python b\'asico}}{Julio y agosto, 2025}
-\linea{Instituto Nacional de Estad\'istica e Inform\'atica (INEI) \textemdash\ {\bfseries An\'alisis y Explotaci\'on de Bases de Datos con Power BI}}{Junio y julio, 2023}
-\linea{ICDL Am\'ericas \textemdash\ {\bfseries Hojas de c\'alculo / Spreadsheets MS Office 2016/6.0}}{Noviembre, 2021}
-\linea{Instituto Nacional de Estad\'istica e Inform\'atica (INEI) \textemdash\ {\bfseries STATA Intermedio}}{Octubre \textendash\ noviembre, 2021}
+\entrada{Python b\'asico}{Julio y agosto, 2025}{Centro de Tecnolog\'ias de Informaci\'on y Comunicaciones de la UNI}
+\entrada{An\'alisis y Explotaci\'on de Bases de Datos con Power BI}{Junio y julio, 2023}{Instituto Nacional de Estad\'istica e Inform\'atica (INEI)}
+\entrada{Hojas de c\'alculo / Spreadsheets MS Office 2016/6.0}{Noviembre, 2021}{ICDL Am\'ericas}
+\entrada{STATA Intermedio}{Octubre \textendash\ noviembre, 2021}{Instituto Nacional de Estad\'istica e Inform\'atica (INEI)}
 
 % ---------- Formación complementaria ----------
 \section{Formaci\'on complementaria}

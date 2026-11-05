@@ -353,3 +353,18 @@ a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
   .masthead__inner-wrap { padding: 0.25rem 1rem; }
   .page__title { font-size: 3rem; }
 }
+
+/* ---------- Segunda ronda de pulido ---------- */
+::selection { background: var(--gp-accent); color: var(--gp-on-accent); }
+.card__imglink { display: block; }
+
+/* CV de la web, con el mismo orden visual que el PDF en LaTeX */
+.cv-entry { max-width: 68ch; padding: 0.75rem 0 0.25rem; border-top: 1px solid var(--gp-line); }
+.cv-entry:first-of-type { border-top: 0; }
+.cv-entry__head {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 0.25rem 1rem; margin: 0 !important;
+}
+.cv-entry__head strong { font-family: var(--gp-serif); font-size: 1.1875em; font-weight: 600; }
+.cv-entry__head span { font-family: var(--gp-mono); font-size: 1rem; color: var(--gp-muted); font-variant-numeric: tabular-nums; }
+.cv-entry__body { margin: 0.125rem 0 0.5rem !important; color: var(--gp-muted); }

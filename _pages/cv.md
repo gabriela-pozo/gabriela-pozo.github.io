@@ -10,6 +10,15 @@ redirect_from:
 
 ## Prácticas
 
-- **CEPLAN (2024-2025).** Estudios prospectivos y tablero de control en Power BI.
-- **MIMP (2023-2024).** Seguimiento de indicadores de población.
-- **Gerencia Regional de Comercio Exterior, Turismo y Artesanía del Cusco (2022).** Indicadores de turismo.
+<div class="cv-entry">
+  <p class="cv-entry__head"><strong>CEPLAN</strong><span>2024-2025</span></p>
+  <p class="cv-entry__body">Estudios prospectivos y tablero de control en Power BI.</p>
+</div>
+<div class="cv-entry">
+  <p class="cv-entry__head"><strong>MIMP</strong><span>2023-2024</span></p>
+  <p class="cv-entry__body">Seguimiento de indicadores de población.</p>
+</div>
+<div class="cv-entry">
+  <p class="cv-entry__head"><strong>Gerencia Regional de Comercio Exterior, Turismo y Artesanía del Cusco</strong><span>2022</span></p>
+  <p class="cv-entry__body">Indicadores de turismo.</p>
+</div>
