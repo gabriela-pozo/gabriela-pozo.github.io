@@ -1,15 +1,19 @@
 {%- comment -%}
   Tarjeta de proyecto. Uso:
     {% include project-card.html proyecto=p destacado=true %}
-  Lee estos campos del front matter de cada archivo de _portfolio/:
-    title, image, image_alt, pregunta, resultado (markdown; la cifra va en **negrita**),
-    repo, demo, demo_label
+  Campos del front matter de cada archivo de _portfolio/:
+    title, image, image_alt, figcaption (pie de figura), cifra y cifra_pie (cifra clave),
+    pregunta, resultado (markdown; la cifra va en **negrita**), repo, demo (opcional), demo_label
 {%- endcomment -%}
 {%- assign p = include.proyecto -%}
 <article class="card{% if include.destacado %} card--featured{% endif %}">
-  <img class="card__img" src="{{ p.image | prepend: '/images/' | prepend: site.baseurl }}" alt="{{ p.image_alt | escape }}" width="1200" height="800"{% if include.destacado %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
+  <figure class="card__fig">
+    <img class="card__img" src="{{ p.image | prepend: '/images/' | prepend: site.baseurl }}" alt="{{ p.image_alt | escape }}" width="1200" height="800"{% if include.destacado %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
+    <figcaption>{{ p.figcaption }}</figcaption>
+  </figure>
   <div class="card__body">
     <h3 class="card__title"><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></h3>
+    <p class="card__num"><span class="card__num-value">{{ p.cifra }}</span><span class="card__num-label">{{ p.cifra_pie }}</span></p>
     <p class="card__label">Pregunta</p>
     <p class="card__q">{{ p.pregunta }}</p>
     <p class="card__label">Resultado</p>

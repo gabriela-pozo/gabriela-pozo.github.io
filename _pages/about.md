@@ -9,9 +9,11 @@ redirect_from:
 ---
 
 <section class="hero" aria-labelledby="nombre">
+  <p class="hero__eyebrow">Gabriela Pozo</p>
+  <h1 id="nombre" class="hero__title">Datos del Perú, con sus límites a la vista.</h1>
+  <div class="hero__byline">
   <img class="hero__photo" src="{{ '/images/foto.jpg' | prepend: site.baseurl }}" alt="Avatar de Gabriela Pozo, un patrón geométrico generado a partir de su usuario de GitHub" width="400" height="400" fetchpriority="high">
   <div class="hero__text">
-    <h1 id="nombre" class="hero__name">Gabriela Pozo</h1>
     <p class="hero__bio">Bachiller en Economía con experiencia en seguimiento de indicadores y tableros en Power BI en CEPLAN y el MIMP. Hoy uso Python y datos abiertos para responder preguntas sobre el Perú, y cuento también lo que no se pudo medir.</p>
     <p class="hero__actions">
       <a class="btn btn--outline" href="https://github.com/{{ site.author.github }}" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
@@ -21,6 +23,7 @@ redirect_from:
       <a class="btn btn--outline" href="mailto:{{ site.author.email }}"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Correo</a>
       {%- include cv-button.html -%}
     </p>
+  </div>
   </div>
 </section>
 
