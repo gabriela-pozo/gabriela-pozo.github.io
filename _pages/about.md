@@ -14,11 +14,13 @@ redirect_from:
 <section id="inicio" class="hero" aria-labelledby="nombre">
   <h1 id="nombre" class="hero__name">Gabriela Pozo</h1>
   <p class="hero__tagline">Datos del Perú, con sus límites a la vista.</p>
-  <p class="hero__bio">Bachiller en Economía con experiencia en seguimiento de indicadores y tableros en Power BI en CEPLAN y el MIMP. Hoy uso Python y datos abiertos para responder preguntas sobre el Perú, y cuento también lo que no se pudo medir.</p>
+  <p class="hero__bio">Bachiller en Economía con experiencia en seguimiento de indicadores, evaluación de metas y tableros en Power BI en CEPLAN y el MIMP. Hoy uso Python y datos abiertos para responder preguntas sobre el Perú, y cuento también lo que no se pudo medir.</p>
   <ul class="chips" aria-label="Herramientas y temas">
     <li>Python</li>
     <li>Power BI</li>
     <li>STATA</li>
+    <li>Indicadores y metas</li>
+    <li>Estudios prospectivos</li>
     <li>Datos abiertos</li>
   </ul>
   <p class="hero__actions">
@@ -30,6 +32,12 @@ redirect_from:
     <a class="btn btn--outline" href="mailto:{{ site.author.email }}"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Correo</a>
     {%- include cv-button.html -%}
   </p>
+
+  <ul class="trail" aria-label="Experiencia en instituciones públicas">
+    <li><strong>CEPLAN</strong><span>Estudios prospectivos, seguimiento de metas y tablero en Power BI</span></li>
+    <li><strong>MIMP</strong><span>Seguimiento y validación de indicadores de población</span></li>
+    <li><strong>Gerencia Regional de Comercio Exterior, Turismo y Artesanía del Cusco</strong><span>Informe de indicadores de turismo</span></li>
+  </ul>
 </section>
 
 <section id="proyectos" class="section" aria-labelledby="t-proyectos">
@@ -50,6 +58,14 @@ redirect_from:
         {% include project-row.html proyecto=p %}
       {%- endunless -%}
     {%- endfor -%}
+  </div>
+</section>
+
+<section id="actividad" class="section" aria-labelledby="t-actividad">
+  <h2 id="t-actividad" class="section__title">Actividad en GitHub</h2>
+  <p class="home-lead">Todo lo que ves aquí vive en repositorios públicos. Este es el calendario de mi actividad, tomado de <a href="https://github.com/{{ site.author.github }}" rel="noopener">mi perfil</a>.</p>
+  <div class="activity" tabindex="0" role="group" aria-label="Calendario de contribuciones de GitHub (se desplaza horizontalmente)">
+    <img src="https://ghchart.rshah.org/0A7466/{{ site.author.github }}" alt="Calendario de contribuciones de GitHub de {{ site.author.github }} durante el último año" width="720" height="112" loading="lazy" onerror="this.closest('section').hidden=true">
   </div>
 </section>
 

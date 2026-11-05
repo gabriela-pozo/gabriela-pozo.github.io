@@ -9,8 +9,9 @@
     repo, demo (opcional), demo_label
 {%- endcomment -%}
 {%- assign p = include.proyecto -%}
-<article class="card{% if include.destacado %} card--featured{% endif %}" data-cats="{{ p.categorias | join: ' ' }}">
+<article class="card{% if include.destacado %} card--featured{% endif %}" data-cats="{{ p.categorias | join: ' ' }}" data-repo="{{ p.repo }}">
   <figure class="card__fig">
+    <div class="frame" aria-hidden="true"><span></span><span></span><span></span><em>{{ p.embed | default: p.demo | remove: 'https://' | split: '/' | first }}</em></div>
     <div class="gallery">
       {%- if p.galeria %}
       {%- for s in p.galeria %}
@@ -32,6 +33,7 @@
     <p class="card__q">{{ p.pregunta }}</p>
     <p class="card__label">Lo que encontré</p>
     <p class="card__r">{{ p.resultado | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+    <p class="card__meta" data-meta></p>
     <p class="card__actions">
       <a class="btn" href="{{ p.url | prepend: site.baseurl }}" aria-label="Ver el caso: {{ p.title | escape }}">Leer el caso</a>
       <a class="btn btn--outline" href="{{ p.repo }}" rel="noopener" aria-label="Código de {{ p.title | escape }}">Código</a>
