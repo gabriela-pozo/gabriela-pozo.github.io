@@ -14,15 +14,16 @@ redirect_from:
 <section id="inicio" class="hero" aria-labelledby="nombre">
   <h1 id="nombre" class="hero__name">Gabriela Pozo</h1>
   <p class="hero__tagline">Datos del Perú, con sus límites a la vista.</p>
-  <p class="hero__bio">Bachiller en Economía con experiencia en seguimiento de indicadores, evaluación de metas y tableros en Power BI en CEPLAN y el MIMP. Hoy uso Python y datos abiertos para responder preguntas sobre el Perú, y cuento también lo que no se pudo medir.</p>
-  <ul class="chips" aria-label="Herramientas y temas">
-    <li>Python</li>
-    <li>Power BI</li>
-    <li>STATA</li>
-    <li>Indicadores y metas</li>
+  <p class="hero__bio">Trabajo con indicadores, metas y tableros de control para apoyar decisiones públicas: lo hice en CEPLAN y en el MIMP. Hoy uso datos abiertos para responder preguntas sobre el Perú, y cuento también lo que no se pudo medir.</p>
+  <ul class="chips" aria-label="Áreas de trabajo">
+    <li>Seguimiento de indicadores</li>
     <li>Estudios prospectivos</li>
+    <li>Población y desarrollo</li>
+    <li>Turismo</li>
+    <li>Tableros de control</li>
     <li>Datos abiertos</li>
   </ul>
+  <p class="tools-line">Herramientas: Python, Power BI, STATA.</p>
   <p class="hero__actions">
     <a class="btn" href="#proyectos">Ver proyectos</a>
     <a class="btn btn--outline" href="https://github.com/{{ site.author.github }}" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
@@ -42,7 +43,7 @@ redirect_from:
 
 <section id="proyectos" class="section" aria-labelledby="t-proyectos">
   <h2 id="t-proyectos" class="section__title">Proyectos</h2>
-  <p class="home-lead">Tres casos destacados, con imágenes y vista interactiva. Debajo, más trabajo con datos abiertos.</p>
+  <p class="home-lead">Tres casos con imágenes y vista en vivo. Debajo, más trabajo con datos abiertos.</p>
   <div class="cards">
     {%- assign proyectos = site.portfolio | sort: "orden" -%}
     {%- for p in proyectos -%}

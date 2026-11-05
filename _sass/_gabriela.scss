@@ -688,3 +688,8 @@ html[data-theme="dark"] .activity { background: #F2F5F9; }
 .card__meta { margin: 0 0 0.25rem !important; }
 .row__title a { display: inline-block; padding: 0.75rem 0; }
 .row__title { margin: -0.5rem 0 0 !important; }
+
+.tools-line { margin: -0.5rem 0 1.5rem !important; color: var(--gp-muted); }
+.card__tabs .is-live-tab { border-color: var(--gp-accent); color: var(--gp-accent); }
+.card__tabs .is-live-tab[aria-pressed="true"] { color: var(--gp-on-accent); background: var(--gp-accent); border-color: var(--gp-accent); }
+.chips li { font-family: var(--gp-sans); font-weight: 500; }

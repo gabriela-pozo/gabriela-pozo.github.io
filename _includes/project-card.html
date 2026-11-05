@@ -4,7 +4,7 @@
   Campos del front matter de cada archivo de _portfolio/:
     title, etiquetas, categorias (lista, para el filtro), destacado,
     image, image_alt, figcaption (imagen única) o galeria (lista de src, label, alt, caption),
-    embed (URL de la vista interactiva, opcional),
+    embed (URL de la vista en vivo, opcional),
     cifra, cifra_pie, pregunta, resultado (markdown; la cifra va en **negrita**),
     repo, demo (opcional), demo_label
 {%- endcomment -%}
@@ -22,10 +22,9 @@
       {%- endif %}
     </div>
     <figcaption class="card__cap">{% if p.galeria %}{{ p.galeria[0].caption }}{% else %}{{ p.figcaption }}{% endif %}</figcaption>
-    <div class="card__tools" data-tools{% if p.embed %} data-embed="{{ p.embed }}" data-embed-title="Vista interactiva: {{ p.title | escape }}"{% endif %}></div>
+    <div class="card__tools" data-tools{% if p.embed %} data-embed="{{ p.embed }}" data-embed-title="Vista en vivo: {{ p.title | escape }}"{% endif %}></div>
   </figure>
   <div class="card__body">
-    {%- if p.destacado %}<p class="card__badge">Destacado</p>{% endif %}
     <p class="card__tags">{{ p.etiquetas }}</p>
     <h3 class="card__title"><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></h3>
     <p class="card__num"><span class="card__num-value">{{ p.cifra }}</span><span class="card__num-label">{{ p.cifra_pie }}</span></p>

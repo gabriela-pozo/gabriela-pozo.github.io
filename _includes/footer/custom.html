@@ -44,12 +44,14 @@
     function closeLive() {
       if (live) { live.remove(); live = null; }
       gallery.classList.remove("is-live");
-      if (liveBtn) { liveBtn.setAttribute("aria-pressed", "false"); liveBtn.textContent = "Vista interactiva"; }
+      if (liveTab) liveTab.setAttribute("aria-pressed", "false");
     }
 
-    if (imgs.length > 1) {
-      var tabs = document.createElement("div");
-      tabs.className = "card__tabs"; tabs.setAttribute("role", "group"); tabs.setAttribute("aria-label", "Imágenes del proyecto");
+    var url = tools.getAttribute("data-embed");
+    var tabs = null, liveTab = null;
+    if (imgs.length > 1 || url) {
+      tabs = document.createElement("div");
+      tabs.className = "card__tabs"; tabs.setAttribute("role", "group"); tabs.setAttribute("aria-label", "Ver el proyecto");
       imgs.forEach(function (im, i) {
         var t = document.createElement("button");
         t.type = "button"; t.setAttribute("data-tab", i); t.setAttribute("aria-pressed", i === 0 ? "true" : "false");
@@ -57,24 +59,24 @@
         t.addEventListener("click", function () { closeLive(); show(i); });
         tabs.appendChild(t);
       });
+      if (url) {
+        liveTab = document.createElement("button");
+        liveTab.type = "button"; liveTab.className = "is-live-tab"; liveTab.setAttribute("aria-pressed", "false");
+        liveTab.textContent = "En vivo";
+        liveTab.addEventListener("click", function () {
+          if (live) return;
+          live = document.createElement("iframe");
+          live.className = "gallery__live"; live.src = url; live.loading = "lazy";
+          live.title = tools.getAttribute("data-embed-title") || "Vista en vivo";
+          gallery.appendChild(live); gallery.classList.add("is-live");
+          [].forEach.call(tabs.querySelectorAll("button"), function (x) { x.setAttribute("aria-pressed", "false"); });
+          liveTab.setAttribute("aria-pressed", "true");
+        });
+        tabs.appendChild(liveTab);
+      }
       tools.appendChild(tabs);
     }
-
-    var url = tools.getAttribute("data-embed");
-    if (url) {
-      liveBtn = document.createElement("button");
-      liveBtn.type = "button"; liveBtn.className = "card__live"; liveBtn.setAttribute("aria-pressed", "false");
-      liveBtn.textContent = "Vista interactiva";
-      liveBtn.addEventListener("click", function () {
-        if (live) { closeLive(); return; }
-        live = document.createElement("iframe");
-        live.className = "gallery__live"; live.src = url; live.loading = "lazy";
-        live.title = tools.getAttribute("data-embed-title") || "Vista interactiva";
-        gallery.appendChild(live); gallery.classList.add("is-live");
-        liveBtn.setAttribute("aria-pressed", "true"); liveBtn.textContent = "Ver imágenes";
-      });
-      tools.appendChild(liveBtn);
-    }
+    liveBtn = null;
     if (tools.children.length) tools.classList.add("has-tools");
   });
 
