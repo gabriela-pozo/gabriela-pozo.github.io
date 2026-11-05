@@ -2,7 +2,7 @@
 
 Sitio personal publicado en https://gabriela-pozo.github.io
 
-Análisis con datos abiertos sobre el Perú: la pregunta, el hallazgo con su fuente y lo que no se pudo medir.
+Análisis con datos abiertos: la pregunta, el hallazgo con su fuente y lo que no se pudo medir.
 
 ## Cómo está armado
 

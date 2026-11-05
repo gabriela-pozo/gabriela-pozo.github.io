@@ -7,7 +7,7 @@ site_theme               : "default" # el tema ya respeta el modo claro/oscuro d
 title                    : "Gabriela Pozo"
 title_separator          : "·"
 name                     : &name "Gabriela Pozo"
-description              : &description "Análisis con datos abiertos sobre el Perú: la pregunta, el hallazgo con su fuente y lo que no se pudo medir."
+description              : &description "Análisis con datos abiertos: la pregunta, el hallazgo con su fuente y lo que no se pudo medir."
 url                      : https://gabriela-pozo.github.io
 baseurl                  : ""
 repository               : "gabriela-pozo/gabriela-pozo.github.io"
@@ -18,7 +18,7 @@ author:
   avatar           : "foto.jpg"
   name             : "Gabriela Pozo"
   pronouns         :
-  bio              : "Análisis con datos abiertos sobre el Perú."
+  bio              : "Análisis con datos abiertos."
   location         : "Perú"
   employer         :
   uri              :

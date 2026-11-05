@@ -11,7 +11,6 @@
 {%- assign p = include.proyecto -%}
 <article class="card{% if include.destacado %} card--featured{% endif %}" data-cats="{{ p.categorias | join: ' ' }}">
   <figure class="card__fig">
-    <div class="frame" aria-hidden="true"><span></span><span></span><span></span><em>{{ p.embed | default: p.demo | remove: 'https://' | split: '/' | first }}</em></div>
     <div class="gallery">
       {%- if p.galeria %}
       {%- for s in p.galeria %}
