@@ -72,7 +72,6 @@ include:
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
-  - _ejemplos_sin_usar
   - .asset-cache
   - .bundle
   - .github

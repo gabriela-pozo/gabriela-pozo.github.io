@@ -1,6 +1,6 @@
 # Orden de los enlaces del menú superior.
 # Quitar un enlace aquí lo oculta del menú sin borrar la página.
-# Blog, Talks, Teaching y Publications se quitaron del menú; sus archivos de ejemplo están en _ejemplos_sin_usar/.
+# Blog, Talks, Teaching y Publications se quitaron del menú.
 
 main:
   - title: "Inicio"

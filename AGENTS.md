@@ -9,5 +9,3 @@ Reglas del contenido:
 - Nada con claves, `.env` ni datos de otras personas.
 
 Reglas de diseño: sobrio, sin animaciones ni efectos; móvil primero (375 px sin scroll horizontal); letra mínima de 16 px; áreas táctiles de al menos 44 px; contraste AA; un solo color de acento. Los estilos propios están en `_sass/custom/_gabriela.scss`.
-
-Contenido de ejemplo del template: está en `_ejemplos_sin_usar/` y no se publica.

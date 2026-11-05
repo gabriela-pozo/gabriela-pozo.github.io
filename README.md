@@ -11,7 +11,6 @@ Bachiller en Economía. Uso Python y datos abiertos para responder preguntas sob
 - `_portfolio/`: un archivo por proyecto. Los datos de la tarjeta (pregunta, resultado, imagen, enlaces) van en el encabezado del archivo.
 - `_pages/cv.md`: CV breve.
 - `_sass/custom/_gabriela.scss`: paleta, tipografía y componentes propios.
-- `_ejemplos_sin_usar/`: contenido de ejemplo del template, fuera del sitio publicado.
 
 ## Pendientes antes de publicar
 
