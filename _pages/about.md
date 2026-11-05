@@ -12,9 +12,14 @@ redirect_from:
 ---
 
 <section id="inicio" class="hero" aria-labelledby="nombre">
-  <h1 id="nombre" class="hero__name">Gabriela Pozo</h1>
-  <p class="hero__tagline">Lo que dicen los datos, y lo que todavía no.</p>
-  <p class="hero__bio">Análisis con datos abiertos. Cada publicación parte de una pregunta, muestra el hallazgo con su fuente y cuenta también lo que no se pudo medir. Vengo del seguimiento de indicadores y tableros en el sector público.</p>
+  <div class="hero__head">
+    {% include foto.html %}
+    <div>
+      <h1 id="nombre" class="hero__name">Gabriela Pozo</h1>
+      <p class="hero__tagline">Lo que dicen los datos, y lo que todavía no.</p>
+    </div>
+  </div>
+  <p class="hero__bio">Análisis con datos abiertos: cada caso parte de una pregunta, muestra el hallazgo con su fuente y cuenta lo que no se pudo medir. Vengo del seguimiento de indicadores en el sector público.</p>
   <ul class="chips" aria-label="Temas que se tratan aquí">
     <li>Educación</li>
     <li>Incendios forestales</li>

@@ -1,0 +1,11 @@
+{%- comment -%}
+  Foto de perfil redonda junto al nombre. Solo aparece si existe images/foto.jpg (o .webp / .png);
+  sin archivo no se muestra nada ni queda un enlace roto.
+{%- endcomment -%}
+{%- assign foto = nil -%}
+{%- for f in site.static_files -%}
+  {%- if f.path == "/images/foto.jpg" or f.path == "/images/foto.webp" or f.path == "/images/foto.png" -%}{%- assign foto = f.path -%}{%- endif -%}
+{%- endfor -%}
+{%- if foto -%}
+<img class="hero__photo" src="{{ foto | prepend: site.baseurl }}" alt="Foto de Gabriela Pozo" width="160" height="160" fetchpriority="high">
+{%- endif -%}

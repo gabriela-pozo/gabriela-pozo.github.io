@@ -720,3 +720,11 @@ html[data-theme="dark"] .activity { background: #F2F5F9; }
 .subscribe .btn { margin: 0; }
 .news time { flex: 0 0 8rem; }
 .news a { display: inline-block; padding: 0.5rem 0; }
+
+/* ---------- Portada: foto opcional y biografía de dos líneas ---------- */
+.hero__head { display: flex; align-items: center; gap: 1.25rem; }
+.hero__head > div { min-width: 0; }
+.hero__photo { flex: none; width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gp-surface); box-shadow: 0 0 0 2px var(--gp-accent); }
+@media (min-width: 720px) { .hero__photo { width: 160px; height: 160px; } .hero__head { gap: 1.75rem; } }
+.hero { max-width: 64rem; }
+.page__content .hero__bio { max-width: 64rem; }
