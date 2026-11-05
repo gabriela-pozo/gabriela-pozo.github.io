@@ -11,12 +11,23 @@ redirect_from:
   - /resume
 ---
 
+{%- assign foto = site.static_files | where: "path", "/images/foto.jpg" -%}
 <section id="inicio" class="hero" aria-labelledby="nombre">
-  <img class="hero__photo" src="{{ '/images/foto.jpg' | prepend: site.baseurl }}" alt="Avatar de Gabriela Pozo, un patrón geométrico generado a partir de su usuario de GitHub" width="400" height="400" fetchpriority="high">
+  {%- if foto.size > 0 %}
+  <img class="hero__photo" src="{{ '/images/foto.jpg' | prepend: site.baseurl }}" alt="Foto de Gabriela Pozo" width="400" height="400" fetchpriority="high">
+  {%- else %}
+  <div class="hero__mark" aria-hidden="true">GP</div>
+  {%- endif %}
   <div class="hero__text">
     <h1 id="nombre" class="hero__name">Gabriela Pozo</h1>
     <p class="hero__tagline">Datos del Perú, con sus límites a la vista.</p>
     <p class="hero__bio">Bachiller en Economía con experiencia en seguimiento de indicadores y tableros en Power BI en CEPLAN y el MIMP. Hoy uso Python y datos abiertos para responder preguntas sobre el Perú, y cuento también lo que no se pudo medir.</p>
+    <ul class="chips" aria-label="Herramientas y temas">
+      <li>Python</li>
+      <li>Power BI</li>
+      <li>STATA</li>
+      <li>Datos abiertos</li>
+    </ul>
     <p class="hero__actions">
       <a class="btn" href="#proyectos">Ver proyectos</a>
       <a class="btn btn--outline" href="https://github.com/{{ site.author.github }}" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
@@ -56,7 +67,6 @@ redirect_from:
     <p class="cv-entry__head"><strong>Gerencia Regional de Comercio Exterior, Turismo y Artesanía del Cusco</strong><span>2022</span></p>
     <p class="cv-entry__body">Indicadores de turismo.</p>
   </div>
-  <p class="cv__tools"><span class="cv__tools-label">Herramientas</span> Python · Power BI · STATA</p>
 </section>
 
 <section id="contacto" class="section" aria-labelledby="t-contacto">

@@ -14,7 +14,7 @@ Bachiller en Economía. Uso Python y datos abiertos para responder preguntas sob
 
 ## Pendientes antes de publicar
 
-- `images/foto.jpg` es hoy un avatar generado (estilo GitHub). Si quieres, reemplázalo por una foto real con el mismo nombre y ajusta el `alt` en `_pages/about.md`.
+- La portada muestra un monograma "GP" mientras no haya foto. Para usar una foto real, sube `images/foto.jpg` (cuadrada, mínimo 400 px): la portada la detecta y la muestra sola.
 - (Opcional) Completar `author.linkedin` en `_config.yml` (solo el usuario) para que aparezca el botón de LinkedIn.
 
 ## Publicación
