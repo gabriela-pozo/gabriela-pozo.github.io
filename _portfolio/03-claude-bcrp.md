@@ -23,7 +23,7 @@ demo_label: "Informe"
 ## Resultados por modo de consulta
 
 <div class="bars" data-bars>
-  <p class="bars__legend"><span class="bars__key bars__key--ok">Acierta</span><span class="bars__key bars__key--bad">Se equivoca</span><span class="bars__key bars__key--na">No sabe</span></p>
+  <p class="bars__legend"><span class="bars__key bars__key--ok">Acierta</span> <span class="bars__key bars__key--bad">Se equivoca</span> <span class="bars__key bars__key--na">No sabe</span></p>
   <ul class="bars__list">
     <li class="bars__row" tabindex="0" data-detail="Memoria, corrida base: 10 de 10 respuestas fueron «no sé». Ningún acierto.">
       <span class="bars__name">Memoria <small>base</small></span>
@@ -31,11 +31,11 @@ demo_label: "Informe"
     </li>
     <li class="bars__row" tabindex="0" data-detail="Memoria, sin la salida «no sé»: 7 de 10 respuestas salieron mal y 3 fueron «no sabe». Ningún acierto.">
       <span class="bars__name">Memoria <small>sin null</small></span>
-      <span class="bars__track"><span class="bars__seg bars__seg--bad" style="flex:7">7</span><span class="bars__seg bars__seg--na" style="flex:3">3</span></span>
+      <span class="bars__track"><span class="bars__seg bars__seg--bad" style="flex:7">7</span> <span class="bars__seg bars__seg--na" style="flex:3">3</span></span>
     </li>
     <li class="bars__row" tabindex="0" data-detail="Web, corrida base: 9 aciertos y 1 «no sabe».">
       <span class="bars__name">Web <small>base</small></span>
-      <span class="bars__track"><span class="bars__seg bars__seg--ok" style="flex:9">9</span><span class="bars__seg bars__seg--na" style="flex:1">1</span></span>
+      <span class="bars__track"><span class="bars__seg bars__seg--ok" style="flex:9">9</span> <span class="bars__seg bars__seg--na" style="flex:1">1</span></span>
     </li>
     <li class="bars__row" tabindex="0" data-detail="Servidor MCP del BCRP, corrida base: 10 aciertos de 10.">
       <span class="bars__name">MCP <small>base</small></span>

@@ -26,7 +26,7 @@
   <div class="card__body">
     <p class="card__tags">{{ p.etiquetas }} · <time datetime="{{ p.date | date: '%Y-%m-%d' }}">{% include fecha.html d=p.date corta=true %}</time></p>
     <h3 class="card__title"><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></h3>
-    <p class="card__num"><span class="card__num-value">{{ p.cifra }}</span><span class="card__num-label">{{ p.cifra_pie }}</span></p>
+    <p class="card__num"><span class="card__num-value">{{ p.cifra }}</span> <span class="card__num-label">{{ p.cifra_pie }}</span></p>
     <p class="card__label">Pregunta</p>
     <p class="card__q">{{ p.pregunta }}</p>
     <p class="card__label">Hallazgo</p>

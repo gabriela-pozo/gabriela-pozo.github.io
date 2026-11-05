@@ -36,7 +36,7 @@ demo_label: "Dashboard"
 
 ## Dashboard interactivo
 
-<div class="embed">
+<div class="embed embed--fijo">
   <iframe src="https://gabriela-pozo.github.io/Cursos/tarea_3_1/web/" title="Dashboard de cohortes escolares del Perú 2025" loading="lazy" allowfullscreen></iframe>
 </div>
 
