@@ -195,7 +195,7 @@ html { scroll-padding-top: 5rem; }            /* la barra superior es fija */
 .home-lead { color: var(--gp-muted); max-width: 60ch; margin: 0 0 1.5rem; }
 .home-more { margin: 1.5rem 0 0; }
 
-.hero { max-width: 52rem; padding: 1rem 0 1rem; scroll-margin-top: 5rem; }
+.hero { max-width: 52rem; padding: 2rem 0 1rem; scroll-margin-top: 5rem; }
 .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1.5rem !important; padding: 0 !important; list-style: none; }
 .chips li {
   margin: 0 !important;
@@ -208,6 +208,8 @@ html { scroll-padding-top: 5rem; }            /* la barra superior es fija */
   border: 1px solid var(--gp-line);
   border-radius: var(--gp-radius-pill);
 }
+.eyebrow { margin: 0 0 0.75rem !important; font-family: var(--gp-mono); font-size: 1rem !important; font-weight: 500; letter-spacing: 0.02em; color: var(--gp-accent); }
+.eyebrow::before { content: ""; display: inline-block; width: 1.5rem; height: 2px; margin-right: 0.625rem; vertical-align: middle; background: currentColor; }
 .hero__name { margin: 0 0 0.75rem; font-size: clamp(2.75rem, 13vw, 5.25rem); line-height: 1; letter-spacing: -0.04em; }
 .hero__tagline {
   margin: 0 0 1rem !important;
@@ -330,8 +332,9 @@ html { scroll-padding-top: 5rem; }            /* la barra superior es fija */
 /* ---------- CV ---------- */
 .cv__download { margin: 0 0 0.5rem; }
 .cv__download:empty { display: none; }
-.cv-entry { max-width: 68ch; padding: 0.75rem 0 0.25rem; border-top: 1px solid var(--gp-line); }
-.cv-entry:first-of-type { border-top: 0; }
+.cv-entry { position: relative; max-width: 68ch; margin-left: 0.5rem; padding: 0 0 1.25rem 1.5rem; border-left: 2px solid var(--gp-line); }
+.cv-entry::before { content: ""; position: absolute; left: -0.4375rem; top: 0.5rem; width: 0.75rem; height: 0.75rem; border-radius: 50%; background: var(--gp-accent); box-shadow: 0 0 0 4px var(--gp-paper); }
+.cv-entry:last-of-type { border-left-color: transparent; padding-bottom: 0; }
 .cv-entry__head {
   display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
   gap: 0.25rem 1rem; margin: 0 !important;

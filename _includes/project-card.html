@@ -28,12 +28,12 @@
     <p class="card__tags">{{ p.etiquetas }}</p>
     <h3 class="card__title"><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></h3>
     <p class="card__num"><span class="card__num-value">{{ p.cifra }}</span><span class="card__num-label">{{ p.cifra_pie }}</span></p>
-    <p class="card__label">Pregunta</p>
+    <p class="card__label">La pregunta</p>
     <p class="card__q">{{ p.pregunta }}</p>
-    <p class="card__label">Resultado</p>
+    <p class="card__label">Lo que encontré</p>
     <p class="card__r">{{ p.resultado | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
     <p class="card__actions">
-      <a class="btn" href="{{ p.url | prepend: site.baseurl }}" aria-label="Ver el caso: {{ p.title | escape }}">Ver caso</a>
+      <a class="btn" href="{{ p.url | prepend: site.baseurl }}" aria-label="Ver el caso: {{ p.title | escape }}">Leer el caso</a>
       <a class="btn btn--outline" href="{{ p.repo }}" rel="noopener" aria-label="Código de {{ p.title | escape }}">Código</a>
       {%- if p.demo %}
       <a class="btn btn--outline" href="{{ p.demo }}" rel="noopener" aria-label="{{ p.demo_label }} de {{ p.title | escape }}">{{ p.demo_label }}</a>

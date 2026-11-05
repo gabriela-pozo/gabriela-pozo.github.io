@@ -12,6 +12,7 @@ redirect_from:
 ---
 
 <section id="inicio" class="hero" aria-labelledby="nombre">
+  <p class="eyebrow">Economista · Datos abiertos del Perú</p>
   <h1 id="nombre" class="hero__name">Gabriela Pozo</h1>
   <p class="hero__tagline">Datos del Perú, con sus límites a la vista.</p>
   <p class="hero__bio">Bachiller en Economía con experiencia en seguimiento de indicadores y tableros en Power BI en CEPLAN y el MIMP. Hoy uso Python y datos abiertos para responder preguntas sobre el Perú, y cuento también lo que no se pudo medir.</p>
@@ -34,7 +35,7 @@ redirect_from:
 
 <section id="proyectos" class="section" aria-labelledby="t-proyectos">
   <h2 id="t-proyectos" class="section__title">Proyectos</h2>
-  <p class="home-lead">Cinco proyectos con datos abiertos del Perú. Filtra por tipo, mira las imágenes y abre la vista interactiva para probar cada uno.</p>
+  <p class="home-lead">Cinco preguntas sobre el Perú, respondidas con datos abiertos. Cada tarjeta muestra la pregunta, el resultado y la fuente; abre la vista interactiva para explorarla tú misma.</p>
   <div class="filters" role="group" aria-label="Filtrar proyectos por tipo" data-filters>
     <button type="button" data-filter="todos" aria-pressed="true">Todos</button>
     <button type="button" data-filter="dashboards" aria-pressed="false">Dashboards</button>
@@ -52,7 +53,8 @@ redirect_from:
 </section>
 
 <section id="cv" class="section" aria-labelledby="t-cv">
-  <h2 id="t-cv" class="section__title">CV</h2>
+  <h2 id="t-cv" class="section__title">Experiencia</h2>
+  <p class="home-lead">Prácticas preprofesionales en seguimiento de indicadores y tableros.</p>
   <p class="cv__download">{% include cv-button.html %}</p>
   <div class="cv-entry">
     <p class="cv-entry__head"><strong>CEPLAN</strong><span>2024-2025</span></p>
@@ -71,7 +73,7 @@ redirect_from:
 <section id="contacto" class="section" aria-labelledby="t-contacto">
   <h2 id="t-contacto" class="section__title">Contacto</h2>
   <div class="contact">
-    <p class="contact__text">¿Una pregunta sobre datos del Perú, o ganas de conversar sobre alguno de estos proyectos? Escríbeme.</p>
+    <p class="contact__text">¿Tienes una pregunta sobre el Perú que los datos puedan responder? Escríbeme y la conversamos.</p>
     <p class="contact__actions">
       <a class="btn" href="mailto:{{ site.author.email }}"><i class="fa-solid fa-envelope" aria-hidden="true"></i> {{ site.author.email }}</a>
       <a class="btn btn--outline" href="https://github.com/{{ site.author.github }}" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>

@@ -10,9 +10,9 @@ layout: single
     <figcaption>{{ page.figcaption }}</figcaption>
   </figure>
   <p class="card__num project__num"><span class="card__num-value">{{ page.cifra }}</span><span class="card__num-label">{{ page.cifra_pie }}</span></p>
-  <p class="card__label">Pregunta</p>
+  <p class="card__label">La pregunta</p>
   <p class="project__q">{{ page.pregunta }}</p>
-  <p class="card__label">Resultado</p>
+  <p class="card__label">Lo que encontré</p>
   <p class="project__r">{{ page.resultado | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
   <p class="card__actions">
     <a class="btn btn--outline" href="{{ page.repo }}" rel="noopener">Código</a>
