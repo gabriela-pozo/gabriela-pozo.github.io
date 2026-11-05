@@ -1,0 +1,24 @@
+{%- comment -%}
+  Tarjeta de proyecto. Uso:
+    {% include project-card.html proyecto=p destacado=true %}
+  Lee estos campos del front matter de cada archivo de _portfolio/:
+    title, image, image_alt, pregunta, resultado (markdown; la cifra va en **negrita**),
+    repo, demo, demo_label
+{%- endcomment -%}
+{%- assign p = include.proyecto -%}
+<article class="card{% if include.destacado %} card--featured{% endif %}">
+  <img class="card__img" src="{{ p.image | prepend: '/images/' | prepend: site.baseurl }}" alt="{{ p.image_alt | escape }}" width="1200" height="800"{% if include.destacado %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
+  <div class="card__body">
+    <h3 class="card__title"><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></h3>
+    <p class="card__label">Pregunta</p>
+    <p class="card__q">{{ p.pregunta }}</p>
+    <p class="card__label">Resultado</p>
+    <p class="card__r">{{ p.resultado | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+    <p class="card__actions">
+      <a class="btn btn--outline" href="{{ p.repo }}" rel="noopener" aria-label="Repo de {{ p.title | escape }}">Repo</a>
+      {%- if p.demo %}
+      <a class="btn" href="{{ p.demo }}" rel="noopener" aria-label="{{ p.demo_label }} de {{ p.title | escape }}">{{ p.demo_label }}</a>
+      {%- endif %}
+    </p>
+  </div>
+</article>

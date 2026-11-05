@@ -1,0 +1,22 @@
+---
+layout: single
+---
+
+{%- comment -%} Página de un proyecto: imagen, pregunta, resultado y botones; luego el texto propio de cada archivo de _portfolio/. {%- endcomment -%}
+<div class="project">
+  <img class="project__img" src="{{ page.image | prepend: '/images/' | prepend: site.baseurl }}" alt="{{ page.image_alt | escape }}" width="1200" height="800" fetchpriority="high">
+  <p class="card__label">Pregunta</p>
+  <p class="project__q">{{ page.pregunta }}</p>
+  <p class="card__label">Resultado</p>
+  <p class="project__r">{{ page.resultado | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+  <p class="card__actions">
+    <a class="btn btn--outline" href="{{ page.repo }}" rel="noopener">Repo</a>
+    {%- if page.demo %}
+    <a class="btn" href="{{ page.demo }}" rel="noopener">{{ page.demo_label }}</a>
+    {%- endif %}
+  </p>
+</div>
+
+{{ content }}
+
+<p><a href="{{ '/proyectos/' | prepend: site.baseurl }}">&larr; Todos los proyectos</a></p>

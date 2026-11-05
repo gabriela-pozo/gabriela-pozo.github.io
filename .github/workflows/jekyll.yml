@@ -1,10 +1,10 @@
-# Workflow for building and deploying an Academic Pages / Jekyll site to GitHub Pages
-name: Deploy Academic Pages template site to Pages
+# Compila el sitio y lo publica en GitHub Pages (Settings > Pages > Source: GitHub Actions)
+name: Publicar sitio en GitHub Pages
 
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["master"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:

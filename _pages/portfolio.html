@@ -1,14 +1,16 @@
 ---
-layout: archive
-title: "Portfolio"
-permalink: /portfolio/
-author_profile: true
+layout: single
+title: "Proyectos"
+permalink: /proyectos/
+redirect_from:
+  - /portfolio/
 ---
 
-{% include base_path %}
+<p class="home-lead">Cada proyecto parte de una pregunta, escribe las reglas antes de mirar los datos y declara lo que no se pudo medir.</p>
 
-
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
-{% endfor %}
-
+<div class="cards">
+  {%- assign proyectos = site.portfolio | sort: "orden" -%}
+  {%- for p in proyectos -%}
+    {% include project-card.html proyecto=p destacado=forloop.first %}
+  {%- endfor -%}
+</div>

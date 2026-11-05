@@ -9,6 +9,10 @@
 {% if page.title %}
   {% assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site.title %}
 {% endif %}
+{% comment %} Una página puede fijar su título completo con `seo_title` en el front matter (se usa en el inicio). {% endcomment %}
+{% if page.seo_title %}
+  {% assign seo_title = page.seo_title %}
+{% endif %}
 {% if seo_title %}
   {% assign seo_title = seo_title | markdownify | strip_html | strip_newlines | escape_once %}
 {% endif %}
@@ -132,7 +136,7 @@ Twitter username (site.twitter.username), matching upstream behavior.
 {% comment %} Open Graph protocol data (https://ogp.me/), used by social media {% endcomment %}
 <meta property="og:locale" content="{{ site.locale | default: "en" }}">
 <meta property="og:site_name" content="{{ site.title }}"> 
-<meta property="og:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
+<meta property="og:title" content="{{ page.seo_title | default: page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
 {% if page.date %}
   <meta property="og:type" content="article">
 {% endif %}
@@ -147,8 +151,8 @@ Twitter username (site.twitter.username), matching upstream behavior.
 {% endif %}
 {% if seo_image_abs %}
   <meta property="og:image" content="{{ seo_image_abs }}">
-  {% if seo_image_abs contains "og-image.png" %}
-    <meta property="og:image:type" content="image/png">
+  {% if seo_image_abs contains "og-image.jpg" %}
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
   {% endif %}

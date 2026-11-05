@@ -2,24 +2,30 @@
 
 <!-- start custom head snippets -->
 
-<!-- Support for jQuery, this needs to be first so that it has a chance to load. -->
+<!-- jQuery (lo necesita el menú y el cambio de tema; debe cargar primero) -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 
-<!-- Support for Academicons -->
-<link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"></noscript>
+<!-- Tipografías: Fraunces (títulos) y Source Sans 3 (texto) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 
-<!-- Support for Font Awesome -->
- <link rel="preload" href="{{ base_path }}/assets/css/fontawesome.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<!-- Íconos (Font Awesome local) -->
+<link rel="preload" href="{{ base_path }}/assets/css/fontawesome.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="{{ base_path }}/assets/css/fontawesome.css"></noscript>
 
-<!-- favicon from https://commons.wikimedia.org/wiki/File:OOjs_UI_icon_academic-progressive.svg -->
+<!-- Favicon "GP" -->
 <link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/images/apple-touch-icon-180x180.png"/>
 <link rel="icon" type="image/svg+xml" href="{{ base_path }}/images/favicon.svg"/>
 <link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-32x32.png" sizes="32x32"/>
 <link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-192x192.png" sizes="192x192"/>
 <link rel="manifest" href="{{ base_path }}/images/manifest.json"/>
-<link rel="icon" href="/images/favicon.ico"/>
-<meta name="theme-color" content="var(--global-bg-color)"/>
+<link rel="icon" href="{{ base_path }}/images/favicon.ico"/>
+<meta name="theme-color" content="#FAF6EF" media="(prefers-color-scheme: light)"/>
+<meta name="theme-color" content="#1B1713" media="(prefers-color-scheme: dark)"/>
+
+<!-- Vista previa al compartir (las etiquetas og:title, og:description y og:image salen de seo.html) -->
+<meta property="og:image:alt" content="Mapa del área quemada en Chichas (Arequipa) medida con Sentinel-2">
+<meta name="twitter:card" content="summary_large_image">
 
 <!-- end custom head snippets -->
